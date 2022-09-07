@@ -16,3 +16,11 @@
 	font-family: "Pyidaungsu";
 	src: url("../assets/PyidaungSu/Pyidaungsu.ttf");
 }
+
+.swiper-pagination-bullet-active {
+	background-color: #3b6900 !important;
+}
+
+.swiper-wrapper {
+	padding-bottom: 30px;
+}
