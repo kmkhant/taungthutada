@@ -26,6 +26,7 @@ import SweetPotato from "../public/sweet-potato.png";
 import SimilingFarmerImg from "../public/smiling-farmer.png";
 import ProjectHolderImg from "../public/projectHolder.png";
 import ProjectCard from "../components/ProjectCard";
+import ReviewCard from "../components/ReviewCard";
 
 const Home: NextPage = () => {
 	return (
@@ -403,7 +404,9 @@ const Home: NextPage = () => {
 									"Onion Plantations using latest technologies"
 								}
 								date={"October 19, 2021"}
-								description={"HI"}
+								description={
+									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+								}
 							/>
 						</SwiperSlide>
 
@@ -415,7 +418,7 @@ const Home: NextPage = () => {
 								}
 								date={"October 19, 2021"}
 								description={
-									"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+									"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. "
 								}
 							/>
 						</SwiperSlide>
@@ -426,7 +429,9 @@ const Home: NextPage = () => {
 									"Onion Plantations using latest technologies"
 								}
 								date={"October 19, 2021"}
-								description={"HI"}
+								description={
+									"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. "
+								}
 							/>
 						</SwiperSlide>
 					</Swiper>
@@ -437,6 +442,29 @@ const Home: NextPage = () => {
 					<h3 className="font-bold text-lg sm:text-xl text-center">
 						What Farmers Say About Us
 					</h3>
+
+					<div className="mt-4 sm:mt-8 flex flex-col sm:flex-row justify-center space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+					</div>
 				</section>
 			</main>
 		</div>
