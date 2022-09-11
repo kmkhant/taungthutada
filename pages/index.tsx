@@ -443,7 +443,7 @@ const Home: NextPage = () => {
 						What Farmers Say About Us
 					</h3>
 
-					<div className="mt-4 sm:mt-8 flex flex-col sm:flex-row justify-center space-x-0 space-y-4 sm:space-y-0 sm:space-x-4">
+					<div className="mt-2 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 						<ReviewCard
 							imageUrl={ProfileHolder}
 							name="U Tin Aung"
@@ -452,7 +452,7 @@ const Home: NextPage = () => {
 						<ReviewCard
 							imageUrl={ProfileHolder}
 							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+							description="Quisque at ante non turpis euismod viverra. Fusce ipsum urna, suscipit in vestibulum vel, vehicula non nibh. Sed id tincidunt tortor. Nulla dolor nulla, ullamcorper quis sagittis nec, convallis id purus. Maecenas quis gravida lacus. Vivamus non eros erat. Etiam fringilla justo sit amet libero condimentum, at hendrerit."
 						/>
 						<ReviewCard
 							imageUrl={ProfileHolder}
