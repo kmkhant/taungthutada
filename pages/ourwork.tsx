@@ -50,7 +50,11 @@ const Ourwork: NextPage = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 					<div className="bg-mainColor">
 						<div>
-							<Image src={ImageHolder} alt={"Iimage"} />
+							<Image
+								src={ImageHolder}
+								alt={"Iimage"}
+								layout="responsive"
+							/>
 						</div>
 						<div className="pt-4 pb-6">
 							<h3 className="font-semibold text-white text-lg text-center">
@@ -63,7 +67,11 @@ const Ourwork: NextPage = () => {
 					</div>
 					<div className="bg-mainColor">
 						<div>
-							<Image src={ImageHolder} alt={"Iimage"} />
+							<Image
+								src={ImageHolder}
+								alt={"Iimage"}
+								layout="responsive"
+							/>
 						</div>
 						<div className="pt-4 pb-6">
 							<h3 className="font-semibold text-white text-lg text-center">
@@ -76,7 +84,11 @@ const Ourwork: NextPage = () => {
 					</div>
 					<div className="bg-mainColor">
 						<div>
-							<Image src={ImageHolder} alt={"Iimage"} />
+							<Image
+								src={ImageHolder}
+								alt={"Iimage"}
+								layout="responsive"
+							/>
 						</div>
 						<div className="pt-4 pb-6">
 							<h3 className="font-semibold text-white text-lg text-center">

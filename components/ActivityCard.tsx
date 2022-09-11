@@ -20,7 +20,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 	return (
 		<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
 			{!flip && (
-				<div className="flex justify-start">
+				<div className="flex justify-center">
 					<Image src={image} alt={"ttt"} />
 				</div>
 			)}
@@ -36,7 +36,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 				</p>
 			</div>
 			{flip && (
-				<div className="flex justify-end">
+				<div className="flex justify-center">
 					<Image src={image} alt={"ttt"} />
 				</div>
 			)}
