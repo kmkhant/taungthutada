@@ -5,6 +5,7 @@ import Image from "next/image";
 import ReviewCard from "../components/ReviewCard";
 import ProfileHolder from "../public/profile-holder.svg";
 
+/* Value Chain Images */
 import InputShopImg from "../public/ourwork/inputs-shop.svg";
 import SubstainablePartnerShip from "../public/ourwork/substainable-partnership.svg";
 import ContractFarming from "../public/ourwork/contract-framing.svg";
@@ -19,6 +20,8 @@ import RecordImg from "../public/ourwork/record.png";
 
 /* Activities Section */
 import ActivitiesImg from "../public/ourwork/team-activities.svg";
+import PlaceHolderImg from "../public/image_holder.svg";
+import ActivityCard from "../components/ActivityCard";
 
 const Ourwork: NextPage = () => {
 	return (
@@ -243,13 +246,51 @@ const Ourwork: NextPage = () => {
 			{/* Activities Section */}
 			<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4 bg-white">
 				<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
-					Activities We&apos;ve Done
+					Latest Activities We&apos;ve Done
 				</h3>
 				<div className="flex justify-center">
 					<Image
 						src={ActivitiesImg}
 						alt={"taungthutada team activites"}
 					/>
+				</div>
+				<div className="">
+					<ActivityCard
+						title="Project: Farmer Partnership -
+Farm Consultaion"
+						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
+						image={PlaceHolderImg}
+						slug={"demo"}
+						flip={false}
+					/>
+					<hr className="mt-4" />
+					<ActivityCard
+						title="Project: Farmer Partnership -
+Farm Consultaion"
+						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
+						image={PlaceHolderImg}
+						slug={"demo"}
+						flip={true}
+					/>
+					<hr className="mt-4" />
+					<ActivityCard
+						title="Project: Farmer Partnership -
+Farm Consultaion"
+						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
+						image={PlaceHolderImg}
+						slug={"demo"}
+						flip={false}
+					/>
+					<hr className="mt-4" />
+					<ActivityCard
+						title="Project: Farmer Partnership -
+Farm Consultaion"
+						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
+						image={PlaceHolderImg}
+						slug={"demo"}
+						flip={true}
+					/>
+					<hr className="mt-4" />
 				</div>
 			</section>
 		</main>
