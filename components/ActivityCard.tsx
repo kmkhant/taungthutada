@@ -20,7 +20,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 	return (
 		<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
 			{!flip && (
-				<div className="flex justify-center">
+				<div className="flex justify-start">
 					<Image src={image} alt={"ttt"} />
 				</div>
 			)}
@@ -28,6 +28,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 				<h3 className="font-bold text-md sm:text-lg ">
 					{title}
 				</h3>
+				<time className="text-gray-800 italic">
+					2021 January, 2021
+				</time>
 				<p className="text-sm mt-4">{description}</p>
 				<p className="my-4 text-sm font-bold cursor-pointer">
 					<Link href={`/activities/detail/${slug}`}>
@@ -36,7 +39,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 				</p>
 			</div>
 			{flip && (
-				<div className="flex justify-center">
+				<div className="flex justify-end">
 					<Image src={image} alt={"ttt"} />
 				</div>
 			)}

@@ -7,6 +7,7 @@ import { ContextProps } from "../../@types.taungthutada";
 import Drawer from "../Drawer/Drawer";
 import DrawerLink from "../Drawer/DrawerLink";
 import NavbarButton from "./NavbarButton";
+import { useRouter } from "next/router";
 
 const Navbar: React.FC = () => {
 	const { isDrawerOpen, setIsDrawerOpen } =
@@ -15,7 +16,8 @@ const Navbar: React.FC = () => {
 	const handleOpen = () => {
 		setIsDrawerOpen((prev) => !prev);
 	};
-	console.log("REBUILD");
+
+	const router = useRouter();
 
 	return (
 		<>

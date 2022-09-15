@@ -26,7 +26,7 @@ import ActivityCard from "../components/ActivityCard";
 const Ourwork: NextPage = () => {
 	return (
 		<main>
-			<section className="bg-mainColor h-[350px] flex justify-center items-center">
+			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
 					<div className="sm:w-[600px]">
@@ -258,7 +258,7 @@ const Ourwork: NextPage = () => {
 			{/* Activities Section */}
 			<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4 bg-white">
 				<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
-					Latest Activities We&apos;ve Done
+					Our Previous Projects
 				</h3>
 				<div className="flex justify-center">
 					<Image
