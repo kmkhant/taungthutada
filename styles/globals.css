@@ -24,3 +24,7 @@
 .swiper-wrapper {
 	padding-bottom: 30px;
 }
+
+.grecaptcha-badge {
+	visibility: hidden;
+}

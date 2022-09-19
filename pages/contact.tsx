@@ -1,7 +1,16 @@
 import { NextPage } from "next";
-import React, { useState, useRef, useEffect } from "react";
+import React, {
+	useState,
+	useRef,
+	useCallback,
+} from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ContactPage: NextPage = () => {
+	const [name, setName] = useState<string>("");
+	const [email, setEmail] = useState<string>("");
+	const [message, setMessage] = useState<string>("");
+
 	const [isNameValid, setIsNameValid] =
 		useState<boolean>(true);
 	const [isEmailValid, setIsEmailValid] =
@@ -9,58 +18,113 @@ const ContactPage: NextPage = () => {
 
 	const [submitted, setSubmitted] =
 		useState<boolean>(false);
+	const [status, setStatus] = useState<string>("");
 
 	const nameRef = useRef<HTMLInputElement>(null);
 	const emailRef = useRef<HTMLInputElement>(null);
 	const messageRef = useRef<HTMLTextAreaElement>(null);
 
-	const nameRegex = new RegExp(
-		"/(^[a-zA-Z][a-zA-Zs]{0,20}[a-zA-Z]$)/"
+	// configure reCAPCHA
+	const { executeRecaptcha } = useGoogleReCaptcha();
+
+	const handleSubmitForm = useCallback(
+		(
+			e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+		) => {
+			e.preventDefault();
+
+			if (!executeRecaptcha) {
+				console.log("Execute reCAPTCHA not yet available");
+				return;
+			}
+
+			executeRecaptcha("enquiryFormSubmit").then(
+				(greCaptchaToken) => {
+					// console.log(
+					// greCaptchaToken,
+					// " response Google reCaptcha server"
+					// );
+					submitEnquiryForm(greCaptchaToken);
+				}
+			);
+		},
+		[executeRecaptcha]
 	);
 
-	const handleSubmit = (
-		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-	) => {
-		e.preventDefault();
-
-		let name: string = "",
-			email: string = "",
-			message: string = "";
-
+	const submitEnquiryForm = (gReCaptchaToken: string) => {
 		if (
 			nameRef.current &&
 			emailRef.current &&
 			messageRef.current
 		) {
-			name = nameRef.current.value;
-			email = emailRef.current.value;
-			message = messageRef.current.value;
+			let data = {
+				name: nameRef.current.value,
+				email: emailRef.current.value,
+				message: messageRef.current.value,
+				gReCaptchaToken: gReCaptchaToken,
+			};
 
-			console.log(name);
-			console.log(email);
-			console.log(message);
+			// cleanup
+			nameRef.current.value = "";
+			emailRef.current.value = "";
+			messageRef.current.value = "";
+
+			fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					Accept: "application/json, text/plain, */*",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			})
+				.then((res: Response) => {
+					return res.json();
+				})
+				.then((res) => {
+					// clean up and inform
+					setSubmitted(true);
+					console.log(res);
+					setStatus(res.message);
+				})
+				.catch((err) => {
+					console.log("ERROR");
+					setStatus("Oops, Something Went Wrong!");
+				});
 		}
 	};
 
-	const handleNameChange = () => {
+	const handleNameChange = (
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
+		setName(e.target.value);
 		if (nameRef.current) {
-			const name = nameRef.current.value;
+			let nameValue = nameRef.current.value;
 			const nameRegex = new RegExp(/^[A-Za-z\s]+$/);
-			if (nameRegex.test(name)) setIsNameValid(true);
+			if (nameRegex.test(nameValue)) setIsNameValid(true);
 			else setIsNameValid(false);
 			// console.log(isNameValid);
 		}
 	};
 
-	const handleEmailChange = () => {
+	const handleEmailChange = (
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
+		setEmail(e.target.value);
 		if (emailRef.current) {
-			const email = emailRef.current.value;
+			let emailValue = emailRef.current.value;
 			const emailRegex = new RegExp(
 				/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
 			);
-			if (emailRegex.test(email)) setIsEmailValid(true);
+			if (emailRegex.test(emailValue))
+				setIsEmailValid(true);
 			else setIsEmailValid(false);
 		}
+	};
+
+	const handleMessageChange = (
+		e: React.ChangeEvent<HTMLTextAreaElement>
+	) => {
+		setMessage(e.target.value);
 	};
 
 	// console.log("RENDER");
@@ -157,16 +221,31 @@ const ContactPage: NextPage = () => {
 								className="bg-gray-50 border border-gray-300 outline-none focus:border-midColor text-gray-900 text-sm rounded-lg block w-full p-2.5 my-2 h-[150px]"
 								placeholder="Write Your Message Here"
 								ref={messageRef}
+								onChange={handleMessageChange}
 								required
 							/>
-							<button
-								type="submit"
-								className={`w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4 disabled:bg-gray-400`}
-								onClick={handleSubmit}
-								disabled={!isNameValid || !isEmailValid}
-							>
-								SEND
-							</button>
+							{!submitted && (
+								<button
+									type="submit"
+									className={`w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4 disabled:bg-gray-400`}
+									onClick={handleSubmitForm}
+									disabled={
+										!isNameValid ||
+										!isEmailValid ||
+										!name.length ||
+										!email.length ||
+										!message.length
+									}
+								>
+									SEND
+								</button>
+							)}
+
+							{submitted && (
+								<p className="w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4">
+									{status}
+								</p>
+							)}
 						</form>
 					</div>
 				</div>
