@@ -49,8 +49,8 @@ const Navbar: React.FC = () => {
 						description="Activities"
 					/>
 					<NavbarButton
-						to="/support"
-						description="Support"
+						to="/contact"
+						description="Contact"
 					/>
 				</div>
 				{/* Humburger Menu */}

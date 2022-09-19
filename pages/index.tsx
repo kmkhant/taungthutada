@@ -57,7 +57,7 @@ const Home: NextPage = () => {
 						</div>
 					</div>
 					<div className={styles.downwardArrow}>
-						<div className="hidden sm:block">
+						<div className="hidden sm:block sm:animate-bounce">
 							<Image
 								src={ArrowDownward}
 								alt="to next section arrow"

@@ -19,7 +19,7 @@ const ActivitiyTimeline: React.FC = () => {
 						alt={"img"}
 					/>
 					<h3 className="mb-3 font-semibold text-xl mt-3">
-						January 2021
+						January
 					</h3>
 					<p className="text-sm font-medium leading-snug tracking-widetext-opacity-100">
 						Being a member of Myanmar Agriculture Network -
@@ -62,7 +62,7 @@ const ActivitiyTimeline: React.FC = () => {
 						alt={"img"}
 					/>
 					<h3 className="mb-3 font-semibold text-xl mt-3">
-						April - June 2021
+						April - June
 					</h3>
 					<p className="text-sm font-medium leading-snug tracking-widetext-opacity-100">
 						Conducting the inputs system intervention
@@ -110,7 +110,7 @@ const ActivitiyTimeline: React.FC = () => {
 						alt={"img"}
 					/>
 					<h3 className="mb-3 font-semibold text-xl mt-3">
-						Oct 2021
+						October
 					</h3>
 					<p className="text-sm font-medium leading-snug tracking-widetext-opacity-100">
 						Women Empowerment Training for local young women
