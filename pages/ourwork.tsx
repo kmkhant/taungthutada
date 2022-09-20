@@ -30,10 +30,10 @@ const Ourwork: NextPage = () => {
 				<div className="flex space-x-2">
 					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
 					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold">
+						<p className="text-white font-semibold text-xl lg:text-2xl">
 							OUR MISSION
 						</p>
-						<p className="text-white text-sm">
+						<p className="text-white text-md lg:text-lg">
 							Becoming impact-oriented value chain
 							development firm and at the same time, to
 							empower rural community members, women and
@@ -44,7 +44,7 @@ const Ourwork: NextPage = () => {
 				</div>
 			</section>
 			<section className="mx-4 sm:mx-8 lg:mx-16  bg-white">
-				<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+				<h3 className="font-bold text-lg sm:text-2xl text-center my-12 sm:my-12">
 					Our Achievements
 				</h3>
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -57,10 +57,10 @@ const Ourwork: NextPage = () => {
 							/>
 						</div>
 						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg text-center">
+							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
 								Title
 							</h3>
-							<p className="text-white text-center text-sm">
+							<p className="text-white text-center text-md lg:text-lg">
 								Description
 							</p>
 						</div>
@@ -74,10 +74,10 @@ const Ourwork: NextPage = () => {
 							/>
 						</div>
 						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg text-center">
+							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
 								Title
 							</h3>
-							<p className="text-white text-center text-sm">
+							<p className="text-white text-center text-md lg:text-lg">
 								Description
 							</p>
 						</div>
@@ -91,17 +91,17 @@ const Ourwork: NextPage = () => {
 							/>
 						</div>
 						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg text-center">
+							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
 								Title
 							</h3>
-							<p className="text-white text-center text-sm">
+							<p className="text-white text-center text-md lg:text-lg">
 								Description
 							</p>
 						</div>
 					</div>
 				</div>
 				<div className="my-4">
-					<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
 						Voice From the Farmers
 					</h3>
 
@@ -130,7 +130,7 @@ const Ourwork: NextPage = () => {
 				</div>
 
 				<div>
-					<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
 						Our Value Chain Strategy
 					</h3>
 					<div className="flex justify-center flex-col sm:flex-row sm:space-x-4">
@@ -141,7 +141,7 @@ const Ourwork: NextPage = () => {
 								width={80}
 								height={80}
 							/>
-							<p className="text-center text-sm mt-4">
+							<p className="text-center text-md lg:text-xl mt-4">
 								Inputs Shop
 							</p>
 						</div>
@@ -169,7 +169,7 @@ const Ourwork: NextPage = () => {
 								width={80}
 								height={80}
 							/>
-							<p className="text-center text-sm mt-4">
+							<p className="text-center text-md lg:text-xl mt-4">
 								Substainable Partnership
 							</p>
 						</div>
@@ -195,7 +195,7 @@ const Ourwork: NextPage = () => {
 								width={80}
 								height={80}
 							/>
-							<p className="text-center text-sm mt-4">
+							<p className="text-center text-md lg:text-xl mt-4">
 								Contract Farming
 							</p>
 						</div>
@@ -222,14 +222,14 @@ const Ourwork: NextPage = () => {
 								width={80}
 								height={80}
 							/>
-							<p className="text-center text-sm mt-4">
+							<p className="text-center text-md lg:text-xl mt-4">
 								Regional Market
 							</p>
 						</div>
 					</div>
 				</div>
 				<div>
-					<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
 						Our Publication: Farm Record & Farmer Story
 					</h3>
 					<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -257,7 +257,7 @@ const Ourwork: NextPage = () => {
 
 			{/* Activities Section */}
 			<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4 bg-white">
-				<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+				<h3 className="font-bold text-xl sm:text-2xl text-center my-12 sm:my-12">
 					Our Previous Projects
 				</h3>
 				<div className="flex justify-center">

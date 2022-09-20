@@ -26,11 +26,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 				/>
 			</div>
 			<div className="sm:col-span-2 mt-4 sm:mt-0 ">
-				<h3 className="font-bold text-md sm:text-lg lg:text-2xl">
+				<h3 className="font-bold text-lg sm:text-lg lg:text-2xl">
 					{title}
 				</h3>
-				<p className="text-sm text-gray-800 mt-1">{date}</p>
-				<p className="text-sm mt-2">{description}</p>
+				<p className="text-md lg:text-lg text-gray-800 mt-1">
+					{date}
+				</p>
+				<p className="text-md lg:text-lg mt-2">
+					{description}
+				</p>
 			</div>
 		</div>
 	);

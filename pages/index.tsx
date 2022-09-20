@@ -32,8 +32,11 @@ const Home: NextPage = () => {
 	return (
 		<div>
 			<Head>
-				<title>Home</title>
-				<meta name="description" content="Home" />
+				<title>Taungthutada</title>
+				<meta
+					name="description"
+					content="Assisting farmers with the initial aim to increase the information access for farmers in Southern Shan State"
+				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
@@ -80,7 +83,7 @@ const Home: NextPage = () => {
 							/>
 						</div>
 						<div className="mx-8 sm:mx-16 lg:mx-32">
-							<p className="text-sm font-light">
+							<p className="text-sm lg:text-xl font-light">
 								Taungthutada &#x28;
 								<span className="font-pyidaungsu">
 									တောင်သူ့တံတား
@@ -110,11 +113,11 @@ const Home: NextPage = () => {
 							alt={"farmer smiling"}
 							layout="responsive"
 						/>
-						<h1 className="text-white font-semibold mt-3">
+						<h1 className="text-white font-semibold mt-3 text-md lg:text-2xl">
 							Solving Together With Farmers
 						</h1>
 						<div className="bg-white w-32 h-0.5 rounded-full mt-0.5"></div>
-						<p className="text-white text-sm mt-4 font-light">
+						<p className="text-white text-sm lg:text-xl mt-4 font-light">
 							Since the beginning, TTTD team wanted to go
 							into fields and meet farmers, learn about
 							their problems and solve them. Therefore, at
@@ -156,7 +159,7 @@ const Home: NextPage = () => {
 					</div>
 
 					<div className="mt-8">
-						<p className="text-center mx-8 sm:mx-32">
+						<p className="text-center mx-8 sm:mx-32 text-sm lg:text-xl">
 							Taungthutada has improved the farm conditions
 							of the farmers in the past 3 years and
 							increased the income of the farmers by 30%.
@@ -167,11 +170,11 @@ const Home: NextPage = () => {
 					</div>
 
 					<div className="mt-8 border-dashed border-black border-2 rounded-lg pb-8">
-						<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
+						<h3 className="font-bold text-center my-4 text-xl lg:text-2xl sm:text-2xl">
 							We offer a wide range <br />
 							of services for
 						</h3>
-						<div className="mt-8">
+						<div className="mt-8 mx-16">
 							<Swiper
 								spaceBetween={50}
 								modules={[Pagination]}
@@ -216,26 +219,26 @@ const Home: NextPage = () => {
 						</div>
 
 						<div className="">
-							<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
+							<h3 className="font-bold text-center my-4 text-xl lg:text-2xl">
 								Our Services
 							</h3>
 
-							<div className="flex flex-col sm:flex-row space-x-0 sm:space-x-5 mx-8 justify-between">
+							<div className="flex flex-col sm:flex-row space-x-0 sm:space-x-3 mx-8 lg:mx-32 justify-between">
 								<div>
-									<h6 className="font-semibold text-center text-md sm:text-lg mt-4 sm:mt-0">
+									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
 										Farmer Partner
 									</h6>
-									<ul className="list-disc mt-4  space-y-5">
+									<ul className="list-disc mt-4 space-y-5 text-md lg:text-xl">
 										<li>Farm Consultation</li>
 										<li>Farmers Cluster Support</li>
 										<li>Market Information Advisory</li>
 									</ul>
 								</div>
 								<div>
-									<h6 className="font-semibold text-center text-md sm:text-lg mt-4 sm:mt-0">
+									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
 										Field Partner
 									</h6>
-									<ul className="list-disc mt-4 space-y-5">
+									<ul className="list-disc mt-4 text-md lg:text-xl space-y-5">
 										<li>Inputs Coordination & Sale</li>
 										<li>
 											Operation & Agronomist Outsourcing
@@ -247,10 +250,10 @@ const Home: NextPage = () => {
 									</ul>
 								</div>
 								<div>
-									<h6 className="font-semibold text-center text-md sm:text-lg mt-4 sm:mt-0">
+									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
 										Capacity Development
 									</h6>
-									<ul className="list-disc mt-4 space-y-5">
+									<ul className="list-disc mt-4 text-md lg:text-xl space-y-5">
 										<li>Women Empowerment Program</li>
 										<li>Agri Startup Support</li>
 									</ul>
@@ -261,8 +264,8 @@ const Home: NextPage = () => {
 
 					<div className="relative sm:absolute left-0 right-0 mx-auto">
 						<div className="flex justify-center mt-16">
-							<div className="w-[370px] sm:w-[600px] lg:w-[800px] bg-white rounded-lg drop-shadow-md p-10">
-								<h3 className="font-bold text-center my-2 text-lg sm:text-2xl">
+							<div className="w-[370px] sm:w-[600px] lg:w-[800px] bg-white rounded-xl drop-shadow-lg p-10">
+								<h3 className="font-bold text-center my-2 text-xl lg:text-2xl sm:text-2xl">
 									We&apos;ve Completed
 								</h3>
 								<div className="flex mx-2 sm:mx-16 justify-between space-x-3">
@@ -296,11 +299,11 @@ const Home: NextPage = () => {
 
 				{/* -------- Strategy -------- */}
 				<section className="bg-sectionColor p-4 sm:p-16">
-					<div className="mt-2 sm:mt-36">
-						<h3 className="font-bold text-center my-4 text-lg sm:text-2xl text-white">
+					<div className="mt-2 sm:mt-28">
+						<h3 className="font-bold text-center my-4 text-xl sm:text-2xl text-white">
 							Strategy Towards 2021 Inputs Crisis
 						</h3>
-						<p className="text-center text-white">
+						<p className="text-center text-white text-md lg:text-xl">
 							Due to COVID-19 restrictions, farmers were not
 							able to go to the suppliers to buy inputs.
 							Moreover, the consequences of February coup
@@ -361,11 +364,11 @@ const Home: NextPage = () => {
 				<section className="mx-4 sm:mx-8 lg:mx-16 py-4 sm:py-8">
 					<div className="flex space-x-10 border-dashed border-2 border-black rounded-lg p-8">
 						<div>
-							<h3 className="font-bold text-lg sm:text-xl">
+							<h3 className="font-bold text-xl sm:text-2xl">
 								Substainability &<br />
 								Social Impacts
 							</h3>
-							<p className="lg:mt-4">
+							<p className="lg:mt-4 text-md lg:text-xl">
 								Amet minim mollit non deserunt ullamco est
 								sit aliqua dolor do amet sint. Velit officia
 								consequat duis enim velit mollit.
@@ -384,7 +387,7 @@ const Home: NextPage = () => {
 
 				{/* Previous Projects */}
 				<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4">
-					<h3 className="font-semibold mb-8">
+					<h3 className="font-semibold mb-8 text-xl lg:text-2xl">
 						Previous Projects
 					</h3>
 					{/* Swiper HERE */}
@@ -439,7 +442,7 @@ const Home: NextPage = () => {
 
 				{/* What Farmers Says */}
 				<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4">
-					<h3 className="font-bold text-lg sm:text-xl text-center">
+					<h3 className="font-bold text-xl sm:text-2xl text-center">
 						What Farmers Say About Us
 					</h3>
 

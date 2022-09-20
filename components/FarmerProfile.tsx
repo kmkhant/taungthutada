@@ -18,7 +18,7 @@ const FarmerProfile: React.FC<FarmerProfileProps> = ({
 				width={100}
 				height={100}
 			/>
-			<h3 className="font-semibold mt-3 text-center">
+			<h3 className="font-semibold mt-3 text-center text-md lg:text-xl">
 				{name}
 			</h3>
 		</div>
