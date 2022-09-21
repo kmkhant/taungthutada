@@ -28,7 +28,16 @@ import ProjectHolderImg from "../public/projectHolder.png";
 import ProjectCard from "../components/ProjectCard";
 import ReviewCard from "../components/ReviewCard";
 
+import { useRouter } from "next/router";
+
+// language data
+import { en, my } from "../assets/locales/home";
+
 const Home: NextPage = () => {
+	const router = useRouter();
+
+	const t = router.locale === "en" ? en : my;
+
 	return (
 		<div>
 			<Head>
@@ -52,9 +61,9 @@ const Home: NextPage = () => {
 					<div className={styles.absolute}>
 						<div className={styles.center}>
 							<h1 className="text-lg sm:text-6xl font-bold">
-								Taungthutada, TTTD
+								{t.hero}
 							</h1>
-							<h3 className="text-sm sm:text-xl mt-1 sm:mt-3 font-light italic">
+							<h3 className="text-sm sm:text-xl mt-3 sm:mt-6 font-light italic">
 								&#8220;those who feed us, need us&#8221;
 							</h3>
 						</div>

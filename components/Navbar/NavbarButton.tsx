@@ -24,7 +24,9 @@ const NavbarButton: React.FC<NavButtonProps> = ({
 						: ""
 				}`}
 			>
-				<a className="text-white text-sm">{description}</a>
+				<a className="text-white text-sm sm:text-md">
+					{description}
+				</a>
 				{!current && (
 					<>
 						<span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-white group-hover:w-1/2 group-hover:transition-all rounded-tr-full rounded-br-full"></span>

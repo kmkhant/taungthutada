@@ -5,6 +5,10 @@ const nextConfig = {
 	images: {
 		domains: ["via.placeholder.com"],
 	},
+	i18n: {
+		locales: ["en", "my"],
+		defaultLocale: "en",
+	},
 };
 
 module.exports = nextConfig;

@@ -9,6 +9,12 @@ import DrawerLink from "../Drawer/DrawerLink";
 import NavbarButton from "./NavbarButton";
 import { useRouter } from "next/router";
 
+// language
+import { en, my } from "../../assets/locales/navbar";
+
+// framer motion
+import { motion } from "framer-motion";
+
 const Navbar: React.FC = () => {
 	const { isDrawerOpen, setIsDrawerOpen } =
 		useStateContext() as ContextProps;
@@ -18,6 +24,24 @@ const Navbar: React.FC = () => {
 	};
 
 	const router = useRouter();
+
+	function changeLanguage(
+		e: React.MouseEvent<HTMLButtonElement>
+	) {
+		e.preventDefault();
+
+		if (router.locale === "en") {
+			// change to myanmar
+			const locale = "my";
+			router.push("/", "/", { locale });
+		} else {
+			// change to english
+			const locale = "en";
+			router.push("/", "/", { locale });
+		}
+	}
+
+	const t = router.locale === "en" ? en : my;
 
 	return (
 		<>
@@ -38,19 +62,19 @@ const Navbar: React.FC = () => {
 				<div className="hidden sm:flex z-20 justify-center items-center space-x-10">
 					<NavbarButton
 						to="/ourwork"
-						description="Our Work"
+						description={t.ourwork}
 					/>
 					<NavbarButton
 						to="/ourstory"
-						description="Our Story"
+						description={t.ourstory}
 					/>
 					<NavbarButton
 						to="/activities"
-						description="Activities"
+						description={t.activities}
 					/>
 					<NavbarButton
 						to="/contact"
-						description="Contact"
+						description={t.contact}
 					/>
 				</div>
 				{/* Humburger Menu */}
@@ -85,22 +109,37 @@ const Navbar: React.FC = () => {
 						</div>
 					</button>
 				</div>
-				<div className="hidden sm:block">&nbsp;</div>
+				<motion.button
+					className="hidden sm:block text-white"
+					onClick={changeLanguage}
+					whileHover={{
+						scale: 1.1,
+						transition: {
+							type: "spring",
+							stiffness: 100,
+						},
+					}}
+					whileTap={{
+						scale: 0.9,
+					}}
+				>
+					<p>{router.locale}</p>
+				</motion.button>
 			</nav>
 			<Drawer>
-				<DrawerLink to="/ourwork" description="Our Work" />
+				<DrawerLink to="/ourwork" description={t.ourwork} />
 
 				<DrawerLink
 					to="/ourstory"
-					description="Our Story"
+					description={t.ourstory}
 				/>
 
 				<DrawerLink
 					to="/activities"
-					description="Activities"
+					description={t.activities}
 				/>
 
-				<DrawerLink to="/support" description="Support" />
+				<DrawerLink to="/contact" description={t.contact} />
 			</Drawer>
 		</>
 	);
