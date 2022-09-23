@@ -13,10 +13,10 @@ const OurStory: NextPage = () => {
 				<div className="flex space-x-2">
 					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
 					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold">
+						<p className="text-white font-semibold text-xl lg:text-2xl">
 							OUR VISION
 						</p>
-						<p className="text-white text-sm">
+						<p className="text-white text-md lg:text-lg">
 							Towards sustainable inclusive business for
 							farmers&apos; livelihoods and food security of
 							rural people in Myanmar.
@@ -34,7 +34,7 @@ const OurStory: NextPage = () => {
 					/>
 				</div>
 				<div className="mt-8">
-					<p className="text-sm">
+					<p className="text-md lg:text-lg">
 						Taungthutada - TTTD was started in September,
 						2019 with the initial aim to increase the
 						information access for farmers in Southern Shan
@@ -52,7 +52,7 @@ const OurStory: NextPage = () => {
 						educational posts for garlic farmers.
 					</p>
 					<br />
-					<p className="text-sm">
+					<p className="text-md lg:text-lg">
 						Since the beginning, TTTD team wanted to go into
 						fields and meet farmers, learn about their
 						problems and solve them with the concept of
@@ -101,10 +101,10 @@ const OurStory: NextPage = () => {
 				</div>
 			</section>
 			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white">
-				<h3 className="font-bold text-lg sm:text-xl text-center my-4 sm:my-8">
-					Taungthutada - Farmers&apos;Bridge Team
+				<h3 className="font-bold text-xl md:text-2xl text-center my-4 sm:my-8">
+					Taungthutada - Farmers&apos; Bridge Team
 				</h3>
-				<p className="text-sm">
+				<p className="text-md lg:text-lg">
 					Taungthudata(TTTD) is a social business formed by
 					young entrepreneurs and farmers that supports the
 					families in Southern Shan State to help increasing

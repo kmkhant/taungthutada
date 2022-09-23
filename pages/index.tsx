@@ -33,6 +33,24 @@ import { useRouter } from "next/router";
 // language data
 import { en, my } from "../assets/locales/home";
 
+// framer motion
+import { motion } from "framer-motion";
+
+// variants
+import {
+	leftLeaf,
+	rightLeaf,
+	fadeUp,
+	fade,
+	container,
+	fadeUpDelay,
+} from "../variants";
+
+// Count-Up
+import CountUp from "react-countup";
+
+// Intersection Observer
+
 const Home: NextPage = () => {
 	const router = useRouter();
 
@@ -41,7 +59,7 @@ const Home: NextPage = () => {
 	return (
 		<div>
 			<Head>
-				<title>Taungthutada</title>
+				<title>{t.hero}</title>
 				<meta
 					name="description"
 					content="Assisting farmers with the initial aim to increase the information access for farmers in Southern Shan State"
@@ -59,14 +77,36 @@ const Home: NextPage = () => {
 					/>
 
 					<div className={styles.absolute}>
-						<div className={styles.center}>
-							<h1 className="text-lg sm:text-6xl font-bold">
-								{t.hero}
-							</h1>
-							<h3 className="text-sm sm:text-xl mt-3 sm:mt-6 font-light italic">
-								&#8220;those who feed us, need us&#8221;
-							</h3>
-						</div>
+						<motion.div
+							className={styles.center}
+							animate={{
+								transition: {
+									staggerChildren: 3,
+								},
+							}}
+						>
+							<div className="overflow-hidden inline-block p-4">
+								<motion.h1
+									className="text-lg sm:text-6xl font-bold"
+									variants={fadeUp}
+									initial="initial"
+									whileInView="animate"
+								>
+									{t.hero}
+								</motion.h1>
+							</div>
+							<br />
+							<div className="inline-block p-1 ">
+								<motion.h3
+									className="text-sm sm:text-xl font-light italic"
+									variants={fadeUpDelay}
+									initial="initial"
+									whileInView="animate"
+								>
+									&#8220;those who feed us, need us&#8221;
+								</motion.h3>
+							</div>
+						</motion.div>
 					</div>
 					<div className={styles.downwardArrow}>
 						<div className="hidden sm:block sm:animate-bounce">
@@ -84,14 +124,26 @@ const Home: NextPage = () => {
 					{/* ------------- Description ------------- */}
 					<div className="flex justify-between items-center text-white text-sm sm:text-md">
 						{/* ------------- Left Leaf ------------- */}
-						<div className="hidden sm:block">
+						<motion.div
+							className="hidden sm:block"
+							variants={leftLeaf}
+							initial="initial"
+							whileInView="animate"
+							viewport={{ once: false, amount: 0.6 }}
+						>
 							<Image
 								src={LeftLeaf}
 								alt="left leaf"
 								layout="intrinsic"
 							/>
-						</div>
-						<div className="mx-8 sm:mx-16 lg:mx-32">
+						</motion.div>
+						<motion.div
+							className="mx-8 sm:mx-16 lg:mx-32"
+							variants={fadeUp}
+							initial="initial"
+							whileInView="animate"
+							viewport={{ once: false, amount: 0.6 }}
+						>
 							<p className="text-sm lg:text-xl font-light">
 								Taungthutada &#x28;
 								<span className="font-pyidaungsu">
@@ -104,51 +156,80 @@ const Home: NextPage = () => {
 								families and eager to serve the farmers as
 								much as we can.
 							</p>
-						</div>
+						</motion.div>
 
 						{/* ------------- Right Leaf ------------- */}
-						<div className="hidden sm:block">
+						<motion.div
+							className="hidden sm:block"
+							variants={rightLeaf}
+							initial="initial"
+							whileInView="animate"
+							viewport={{ once: false, amount: 0.6 }}
+						>
 							<Image
 								src={RightLeaf}
 								alt="right leaf"
 								layout="intrinsic"
 							/>
-						</div>
+						</motion.div>
 					</div>
 
 					<div className="mt-10 mx-8 sm:mx-16 lg:mx-32">
-						<Image
-							src={SolvingWithFarmersImg}
-							alt={"farmer smiling"}
-							layout="responsive"
-						/>
-						<h1 className="text-white font-semibold mt-3 text-md lg:text-2xl">
-							Solving Together With Farmers
-						</h1>
-						<div className="bg-white w-32 h-0.5 rounded-full mt-0.5"></div>
-						<p className="text-white text-sm lg:text-xl mt-4 font-light">
-							Since the beginning, TTTD team wanted to go
-							into fields and meet farmers, learn about
-							their problems and solve them. Therefore, at
-							the beginning of year 2020, the team put a
-							question of “ What if we start the a field
-							work in Taunggyi to do a feasibility and
-							impact study about farmers&apos;
-							livelihoods?”. We partnered with “ Farm Shop “
-							to be a supplier for Shan Vegetables & Fruits
-							and growers for the crops such as Pumpkin
-							(Pyit Taing Htaung), Baby Kale and Sweet
-							Violet Waxy Corn from East-West Seeds.
-						</p>
+						<motion.div
+							variants={fade}
+							initial="initial"
+							whileInView="animate"
+						>
+							<Image
+								src={SolvingWithFarmersImg}
+								alt={"farmer smiling"}
+								layout="responsive"
+							/>
+						</motion.div>
+
+						<motion.div
+							variants={fadeUp}
+							initial="initial"
+							whileInView="animate"
+						>
+							<h1 className="text-white font-semibold mt-3 text-md lg:text-2xl">
+								Solving Together With Farmers
+							</h1>
+							<div className="bg-white w-32 h-0.5 rounded-full mt-0.5"></div>
+							<p className="text-white text-sm lg:text-xl mt-4 font-light">
+								Since the beginning, TTTD team wanted to go
+								into fields and meet farmers, learn about
+								their problems and solve them. Therefore, at
+								the beginning of year 2020, the team put a
+								question of “ What if we start the a field
+								work in Taunggyi to do a feasibility and
+								impact study about farmers&apos;
+								livelihoods?”. We partnered with “ Farm Shop
+								“ to be a supplier for Shan Vegetables &
+								Fruits and growers for the crops such as
+								Pumpkin (Pyit Taing Htaung), Baby Kale and
+								Sweet Violet Waxy Corn from East-West Seeds.
+							</p>
+						</motion.div>
 					</div>
 				</section>
 
 				{/* Meet Farmers Section */}
 				<section className="mx-4 sm:mx-8 lg:mx-16 pb-8 sm:pb-32">
-					<h1 className="font-bold text-center mt-8 text-lg sm:text-2xl">
+					<motion.h1
+						className="font-bold text-center mt-8 text-lg sm:text-2xl"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					>
 						MEET OUR FARMERS
-					</h1>
-					<div className="flex flex-col sm:flex-row mt-8 space-y-10 sm:space-y-0 sm:space-x-10 justify-center">
+					</motion.h1>
+					<motion.div
+						className="flex flex-col sm:flex-row mt-8 space-y-10 sm:space-y-0 sm:space-x-10 justify-center"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
 						<FarmerProfile
 							img={ProfileHolder}
 							name="U Sai Moe Shwe"
@@ -165,9 +246,14 @@ const Home: NextPage = () => {
 							img={ProfileHolder}
 							name="U Kyaw Thu"
 						/>
-					</div>
+					</motion.div>
 
-					<div className="mt-8">
+					<motion.div
+						className="mt-8"
+						variants={fade}
+						initial="initial"
+						whileInView="animate"
+					>
 						<p className="text-center mx-8 sm:mx-32 text-sm lg:text-xl">
 							Taungthutada has improved the farm conditions
 							of the farmers in the past 3 years and
@@ -176,9 +262,14 @@ const Home: NextPage = () => {
 							of the farmers in the past 3 years and
 							increased the income of the farmers by 30%.
 						</p>
-					</div>
+					</motion.div>
 
-					<div className="mt-8 border-dashed border-black border-2 rounded-lg pb-8">
+					<motion.div
+						className="mt-8 border-dashed border-black border-2 rounded-lg pb-8"
+						variants={fade}
+						initial="initial"
+						whileInView="animate"
+					>
 						<h3 className="font-bold text-center my-4 text-xl lg:text-2xl sm:text-2xl">
 							We offer a wide range <br />
 							of services for
@@ -269,7 +360,7 @@ const Home: NextPage = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 
 					<div className="relative sm:absolute left-0 right-0 mx-auto">
 						<div className="flex justify-center mt-16">
@@ -277,10 +368,20 @@ const Home: NextPage = () => {
 								<h3 className="font-bold text-center my-2 text-xl lg:text-2xl sm:text-2xl">
 									We&apos;ve Completed
 								</h3>
-								<div className="flex mx-2 sm:mx-16 justify-between space-x-3">
+								<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 									<div className="">
 										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
-											6 Projects
+											<CountUp
+												start={0}
+												end={6}
+												duration={2}
+												enableScrollSpy
+											>
+												{({ countUpRef }) => (
+													<span ref={countUpRef} />
+												)}
+											</CountUp>{" "}
+											Projects
 										</h3>
 										<p className="text-center">
 											in Success
@@ -288,7 +389,17 @@ const Home: NextPage = () => {
 									</div>
 									<div className="">
 										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
-											3+ Years
+											<CountUp
+												start={0}
+												end={3}
+												duration={2}
+												enableScrollSpy
+											>
+												{({ countUpRef }) => (
+													<span ref={countUpRef} />
+												)}
+											</CountUp>{" "}
+											+ Years
 										</h3>
 										<p className="text-center">
 											in Service
@@ -296,7 +407,17 @@ const Home: NextPage = () => {
 									</div>
 									<div className="">
 										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
-											2000+ Happy
+											<CountUp
+												start={0}
+												end={2000}
+												duration={2}
+												enableScrollSpy
+											>
+												{({ countUpRef }) => (
+													<span ref={countUpRef} />
+												)}
+											</CountUp>{" "}
+											+ Happy
 										</h3>
 										<p className="text-center">Farmers</p>
 									</div>
@@ -308,7 +429,12 @@ const Home: NextPage = () => {
 
 				{/* -------- Strategy -------- */}
 				<section className="bg-sectionColor p-4 sm:p-16">
-					<div className="mt-2 sm:mt-28">
+					<motion.div
+						className="mt-2 sm:mt-28"
+						variants={fade}
+						initial="initial"
+						whileInView="animate"
+					>
 						<h3 className="font-bold text-center my-4 text-xl sm:text-2xl text-white">
 							Strategy Towards 2021 Inputs Crisis
 						</h3>
@@ -325,11 +451,19 @@ const Home: NextPage = () => {
 							facilitate the situation and help farmers with
 							the investment from HEKS/EPER Myanmar.
 						</p>
-					</div>
+					</motion.div>
 
 					<div className="mt-8 mx-32">
-						<div className="flex justify-center space-x-16 sm:space-x-32 lg:space-x-64">
-							<div className="flex flex-col justify-center">
+						<motion.div
+							className="flex justify-center space-x-16 sm:space-x-32 lg:space-x-64"
+							variants={container}
+							initial="initial"
+							whileInView="animate"
+						>
+							<motion.div
+								className="flex flex-col justify-center"
+								variants={fadeUp}
+							>
 								<Image
 									src={ProfileHolder}
 									alt={"strategy icon"}
@@ -340,8 +474,11 @@ const Home: NextPage = () => {
 									Bulk Sales <br />
 									Opportunity
 								</h3>
-							</div>
-							<div className="flex flex-col justify-center">
+							</motion.div>
+							<motion.div
+								className="flex flex-col justify-center"
+								variants={fadeUp}
+							>
 								<Image
 									src={ProfileHolder}
 									alt={"strategy icon"}
@@ -352,9 +489,14 @@ const Home: NextPage = () => {
 									Technical <br />
 									Assistance
 								</h3>
-							</div>
-						</div>
-						<div className="flex flex-col justify-center">
+							</motion.div>
+						</motion.div>
+						<motion.div
+							className="flex flex-col justify-center"
+							variants={fadeUpDelay}
+							initial="initial"
+							whileInView="animate"
+						>
 							<Image
 								src={ProfileHolder}
 								alt={"strategy icon"}
@@ -365,7 +507,7 @@ const Home: NextPage = () => {
 								No interest <br />
 								Bearing
 							</h3>
-						</div>
+						</motion.div>
 					</div>
 				</section>
 
@@ -455,7 +597,12 @@ const Home: NextPage = () => {
 						What Farmers Say About Us
 					</h3>
 
-					<div className="mt-2 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+					<motion.div
+						className="mt-2 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
 						<ReviewCard
 							imageUrl={ProfileHolder}
 							name="U Tin Aung"
@@ -476,7 +623,7 @@ const Home: NextPage = () => {
 							name="U Tin Aung"
 							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
 						/>
-					</div>
+					</motion.div>
 				</section>
 			</main>
 		</div>

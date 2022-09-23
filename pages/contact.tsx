@@ -16,9 +16,9 @@ const ContactPage: NextPage = () => {
 	const [isEmailValid, setIsEmailValid] =
 		useState<boolean>(true);
 
-	const [submitted, setSubmitted] =
-		useState<boolean>(false);
-	const [status, setStatus] = useState<string>("");
+	// configure status
+	const [loading, setLoading] = useState<boolean>(false);
+	const [status, setStatus] = useState<string>("SEND");
 
 	const nameRef = useRef<HTMLInputElement>(null);
 	const emailRef = useRef<HTMLInputElement>(null);
@@ -69,6 +69,9 @@ const ContactPage: NextPage = () => {
 			emailRef.current.value = "";
 			messageRef.current.value = "";
 
+			setStatus("SENDING...");
+			setLoading(true);
+
 			fetch("/api/contact", {
 				method: "POST",
 				headers: {
@@ -82,7 +85,7 @@ const ContactPage: NextPage = () => {
 				})
 				.then((res) => {
 					// clean up and inform
-					setSubmitted(true);
+					setStatus("Submitted");
 					console.log(res);
 					setStatus(res.message);
 				})
@@ -135,10 +138,10 @@ const ContactPage: NextPage = () => {
 				<div className="flex space-x-2">
 					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
 					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold">
+						<p className="text-white font-semibold text-xl lg:text-2xl">
 							OUR MISSION
 						</p>
-						<p className="text-white text-sm">
+						<p className="text-white text-md lg:text-lg">
 							Becoming impact-oriented value chain
 							development firm and at the same time, to
 							empower rural community members, women and
@@ -155,7 +158,7 @@ const ContactPage: NextPage = () => {
 							<h3 className="font-bold text-lg sm:text-xl mt-4 mb-1">
 								TAUNGGYI
 							</h3>
-							<p className="text-sm">
+							<p className="text-md lg:text-lg">
 								No-102 Innyar St, TAUNGGYI, Shan, Myanmar
 							</p>
 						</div>
@@ -164,20 +167,20 @@ const ContactPage: NextPage = () => {
 								Contact Us
 							</h3>
 
-							<p className="text-sm">
+							<p className="text-md lg:text-lg">
 								Phone : +959123456789
 							</p>
-							<p className="text-sm">
+							<p className="text-md lg:text-lg">
 								{" "}
 								Email : support@taungthutada.com
 							</p>
 						</div>
 					</div>
 					<div>
-						<h3 className="font-bold text-lg sm:text-xl mt-4 mb-1">
+						<h3 className="font-bold text-xl sm:text-2xl mt-4 mb-1">
 							Get In Touch
 						</h3>
-						<p className="text-sm">
+						<p className="text-md lg:text-lg">
 							Write your message here and our team will
 							contact you very soon.
 						</p>
@@ -224,28 +227,22 @@ const ContactPage: NextPage = () => {
 								onChange={handleMessageChange}
 								required
 							/>
-							{!submitted && (
-								<button
-									type="submit"
-									className={`w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4 disabled:bg-gray-400`}
-									onClick={handleSubmitForm}
-									disabled={
-										!isNameValid ||
-										!isEmailValid ||
-										!name.length ||
-										!email.length ||
-										!message.length
-									}
-								>
-									SEND
-								</button>
-							)}
-
-							{submitted && (
-								<p className="w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4">
-									{status}
-								</p>
-							)}
+							<button
+								type="submit"
+								className={`w-full bg-midColor text-white text-center text-semibold rounded-lg p-2 mt-4 
+								disabled:bg-gray-400`}
+								onClick={handleSubmitForm}
+								disabled={
+									!isNameValid ||
+									!isEmailValid ||
+									!name.length ||
+									!email.length ||
+									!message.length ||
+									loading
+								}
+							>
+								{status}
+							</button>
 						</form>
 					</div>
 				</div>

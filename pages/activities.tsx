@@ -9,10 +9,10 @@ const ActivitiesPage: NextPage = () => {
 				<div className="flex space-x-2">
 					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
 					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold">
+						<p className="text-white font-semibold text-xl lg:text-2xl">
 							OUR GOAl
 						</p>
-						<p className="text-white text-sm">
+						<p className="text-white text-md lg:text-lg">
 							We strive to create a sustainable and
 							inclusive solutions that are capable of
 							mitigating climate risks, improving food
@@ -23,7 +23,7 @@ const ActivitiesPage: NextPage = () => {
 				</div>
 			</section>
 			<section>
-				<h3 className="font-bold text-lg sm:text-xl text-center my-12 sm:my-12">
+				<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
 					Activities in 2021
 				</h3>
 				{/* Timeline */}

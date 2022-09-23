@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { farmerProfile } from "../variants";
 
 interface FarmerProfileProps {
 	img: any;
@@ -11,7 +14,10 @@ const FarmerProfile: React.FC<FarmerProfileProps> = ({
 	name,
 }) => {
 	return (
-		<div className="flex flex-col justify-center">
+		<motion.div
+			className="flex flex-col justify-center"
+			variants={farmerProfile}
+		>
 			<Image
 				src={img}
 				alt={"farmer profile"}
@@ -21,7 +27,7 @@ const FarmerProfile: React.FC<FarmerProfileProps> = ({
 			<h3 className="font-semibold mt-3 text-center text-md lg:text-xl">
 				{name}
 			</h3>
-		</div>
+		</motion.div>
 	);
 };
 
