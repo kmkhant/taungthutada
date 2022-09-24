@@ -1,6 +1,6 @@
 export const leftLeaf = {
 	initial: {
-		x: "-5%",
+		x: -30,
 		rotate: 15,
 	},
 	animate: {
@@ -14,7 +14,7 @@ export const leftLeaf = {
 
 export const rightLeaf = {
 	initial: {
-		x: "5%",
+		x: 30,
 		rotate: -15,
 	},
 	animate: {
@@ -73,12 +73,12 @@ export const container = {
 	animate: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.5,
+			staggerChildren: 0.3,
 		},
 	},
 };
 
-export const farmerProfile = {
+export const slideIn = {
 	initial: {
 		opacity: 0,
 		x: -40,
@@ -87,7 +87,19 @@ export const farmerProfile = {
 		opacity: 1,
 		x: 0,
 		transition: {
-			duration: 1,
+			duration: 0.5,
 		},
+	},
+};
+
+export const scaleUp = {
+	initial: {
+		opacity: 0,
+		scale: 0.3,
+	},
+	animate: {
+		opacity: 1,
+		scale: 1,
+		transition: { duration: 0.8 },
 	},
 };

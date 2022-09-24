@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { farmerProfile } from "../variants";
+import { slideIn } from "../variants";
 
 interface FarmerProfileProps {
 	img: any;
@@ -16,7 +16,7 @@ const FarmerProfile: React.FC<FarmerProfileProps> = ({
 	return (
 		<motion.div
 			className="flex flex-col justify-center"
-			variants={farmerProfile}
+			variants={slideIn}
 		>
 			<Image
 				src={img}

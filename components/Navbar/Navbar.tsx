@@ -33,11 +33,19 @@ const Navbar: React.FC = () => {
 		if (router.locale === "en") {
 			// change to myanmar
 			const locale = "my";
-			router.push("/", "/", { locale });
+			router.push(
+				router.pathname,
+				`/my/${router.pathname}`,
+				{ locale }
+			);
 		} else {
 			// change to english
 			const locale = "en";
-			router.push("/", "/", { locale });
+			router.push(
+				router.pathname,
+				`/en/${router.pathname}`,
+				{ locale }
+			);
 		}
 	}
 

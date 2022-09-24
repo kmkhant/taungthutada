@@ -3,11 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../variants";
 
-interface ReviewCardProps {
-	imageUrl: string;
-	name: string;
-	description: string;
-}
+import { ReviewCardProps } from "../@types.taungthutada";
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
 	imageUrl,

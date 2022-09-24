@@ -3,13 +3,12 @@ import React from "react";
 
 import linkedInIcon from "../public/social/linkedin.svg";
 import emailIcon from "../public/social/email.svg";
-interface MemberProfileProps {
-	name: string;
-	occupation: string;
-	imageUrl: any;
-	linkedIn: string;
-	email: string;
-}
+
+import { MemberProfileProps } from "../@types.taungthutada";
+
+import { motion } from "framer-motion";
+
+import { slideIn } from "../variants";
 
 const MemberProfile: React.FC<MemberProfileProps> = ({
 	name,
@@ -19,7 +18,7 @@ const MemberProfile: React.FC<MemberProfileProps> = ({
 	email,
 }) => {
 	return (
-		<div className="">
+		<motion.div className="" variants={slideIn}>
 			<Image
 				src={imageUrl}
 				alt={`${name}'s profile`}
@@ -47,7 +46,7 @@ const MemberProfile: React.FC<MemberProfileProps> = ({
 					/>
 				</a>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

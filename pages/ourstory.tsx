@@ -6,35 +6,75 @@ import MemberProfile from "../components/MemberProfile";
 import Logo from "../public/ourstory/logo.svg";
 import profileHolder from "../public/ourstory/profileHolder.png";
 
+import { motion } from "framer-motion";
+import {
+	fadeUp,
+	container,
+	fade,
+	scaleUp,
+} from "../variants";
+
 const OurStory: NextPage = () => {
 	return (
 		<main>
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
-					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
-					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold text-xl lg:text-2xl">
-							OUR VISION
-						</p>
-						<p className="text-white text-md lg:text-lg">
-							Towards sustainable inclusive business for
-							farmers&apos; livelihoods and food security of
-							rural people in Myanmar.
-						</p>
-					</div>
+					<motion.div
+						className="w-16 h-0.5 bg-white rounded-full mt-3"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					></motion.div>
+					<motion.div
+						className="sm:w-[600px]"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<div className="overflow-hidden inline-block">
+							<motion.p
+								className="text-white font-semibold text-xl lg:text-2xl"
+								variants={fadeUp}
+							>
+								OUR VISION
+							</motion.p>
+						</div>
+
+						<div className="overflow-hidden inline-block">
+							<motion.p
+								className="text-white text-md lg:text-lg"
+								variants={fadeUp}
+							>
+								Towards sustainable inclusive business for
+								farmers&apos; livelihoods and food security
+								of rural people in Myanmar.
+							</motion.p>
+						</div>
+					</motion.div>
 				</div>
 			</section>
 			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white">
 				<div className="flex justify-center mt-8">
-					<Image
-						src={Logo}
-						alt={"logo"}
-						width={220}
-						height={220}
-					/>
+					<motion.div
+						variants={scaleUp}
+						initial="initial"
+						whileInView="animate"
+					>
+						<Image
+							src={Logo}
+							alt={"logo"}
+							width={220}
+							height={220}
+						/>
+					</motion.div>
 				</div>
 				<div className="mt-8">
-					<p className="text-md lg:text-lg">
+					<motion.p
+						className="text-md lg:text-lg"
+						variants={fade}
+						initial="initial"
+						whileInView="animate"
+					>
 						Taungthutada - TTTD was started in September,
 						2019 with the initial aim to increase the
 						information access for farmers in Southern Shan
@@ -50,9 +90,14 @@ const OurStory: NextPage = () => {
 						camp and we have served over 50 farmers through
 						messenger chat and phone call and published 33
 						educational posts for garlic farmers.
-					</p>
+					</motion.p>
 					<br />
-					<p className="text-md lg:text-lg">
+					<motion.p
+						className="text-md lg:text-lg"
+						variants={fade}
+						initial="initial"
+						whileInView="animate"
+					>
 						Since the beginning, TTTD team wanted to go into
 						fields and meet farmers, learn about their
 						problems and solve them with the concept of
@@ -97,25 +142,47 @@ const OurStory: NextPage = () => {
 						focused on the providing the critical needs and
 						to bring up the farmers&apos; motivation by
 						providing training.
-					</p>
+					</motion.p>
 				</div>
+				<hr className="mt-4" />
 			</section>
+
 			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white">
-				<h3 className="font-bold text-xl md:text-2xl text-center my-4 sm:my-8">
+				<motion.h3
+					className="font-bold text-xl md:text-2xl text-center my-4 sm:my-4"
+					variants={fadeUp}
+					initial="initial"
+					whileInView="animate"
+				>
 					Taungthutada - Farmers&apos; Bridge Team
-				</h3>
-				<p className="text-md lg:text-lg">
+				</motion.h3>
+				<motion.p
+					className="text-md lg:text-lg"
+					variants={fade}
+					initial="initial"
+					whileInView="animate"
+				>
 					Taungthudata(TTTD) is a social business formed by
 					young entrepreneurs and farmers that supports the
 					families in Southern Shan State to help increasing
 					their incomes.TTTD is dedicated to bridge the gaps
 					between farmers and farm markets by resolving
 					problems together with the farmers.
-				</p>
-				<h3 className="font-bold text-lg sm:text-xl text-center my-4 sm:my-8">
+				</motion.p>
+				<motion.h3
+					className="font-bold text-lg sm:text-xl text-center my-4 sm:my-8"
+					variants={fadeUp}
+					initial="initial"
+					whileInView="animate"
+				>
 					Our Members
-				</h3>
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+				</motion.h3>
+				<motion.div
+					className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+					variants={container}
+					initial="initial"
+					whileInView="animate"
+				>
 					{[...new Array(9)].map((_, idx) => {
 						return (
 							<div
@@ -132,7 +199,7 @@ const OurStory: NextPage = () => {
 							</div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</section>
 		</main>
 	);

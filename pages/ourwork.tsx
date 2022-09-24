@@ -5,6 +5,9 @@ import Image from "next/image";
 import ReviewCard from "../components/ReviewCard";
 import ProfileHolder from "../public/profile-holder.svg";
 
+/* Achievement Section */
+import AchievementCard from "../components/AchievementCard";
+
 /* Value Chain Images */
 import InputShopImg from "../public/ourwork/inputs-shop.svg";
 import SubstainablePartnerShip from "../public/ourwork/substainable-partnership.svg";
@@ -23,89 +26,102 @@ import ActivitiesImg from "../public/ourwork/team-activities.svg";
 import PlaceHolderImg from "../public/image_holder.svg";
 import ActivityCard from "../components/ActivityCard";
 
+import { motion } from "framer-motion";
+
+// variants
+import {
+	fadeUp,
+	container,
+	slideIn,
+	fade,
+} from "../variants";
+
 const Ourwork: NextPage = () => {
 	return (
 		<main>
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
-					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
-					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold text-xl lg:text-2xl">
-							OUR MISSION
-						</p>
-						<p className="text-white text-md lg:text-lg">
+					<motion.div
+						className="w-16 h-0.5 bg-white rounded-full mt-3"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					></motion.div>
+					<motion.div
+						className="sm:w-[600px]"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<div className="overflow-hidden inline-block">
+							<motion.p
+								className="text-white font-semibold text-xl lg:text-2xl"
+								variants={fadeUp}
+							>
+								OUR MISSION
+							</motion.p>
+						</div>
+
+						<motion.p
+							className="text-white text-md lg:text-lg"
+							variants={fadeUp}
+						>
 							Becoming impact-oriented value chain
 							development firm and at the same time, to
 							empower rural community members, women and
 							youths through economic opportunities, and
 							market access.
-						</p>
-					</div>
+						</motion.p>
+					</motion.div>
 				</div>
 			</section>
 			<section className="mx-4 sm:mx-8 lg:mx-16  bg-white">
-				<h3 className="font-bold text-lg sm:text-2xl text-center my-12 sm:my-12">
+				<motion.h3
+					className="font-bold text-lg sm:text-2xl text-center my-12 sm:my-12"
+					variants={fadeUp}
+					initial="initial"
+					whileInView="animate"
+				>
 					Our Achievements
-				</h3>
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-					<div className="bg-mainColor">
-						<div>
-							<Image
-								src={ImageHolder}
-								alt={"Iimage"}
-								layout="responsive"
-							/>
-						</div>
-						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
-								Title
-							</h3>
-							<p className="text-white text-center text-md lg:text-lg">
-								Description
-							</p>
-						</div>
-					</div>
-					<div className="bg-mainColor">
-						<div>
-							<Image
-								src={ImageHolder}
-								alt={"Iimage"}
-								layout="responsive"
-							/>
-						</div>
-						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
-								Title
-							</h3>
-							<p className="text-white text-center text-md lg:text-lg">
-								Description
-							</p>
-						</div>
-					</div>
-					<div className="bg-mainColor">
-						<div>
-							<Image
-								src={ImageHolder}
-								alt={"Iimage"}
-								layout="responsive"
-							/>
-						</div>
-						<div className="pt-4 pb-6">
-							<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
-								Title
-							</h3>
-							<p className="text-white text-center text-md lg:text-lg">
-								Description
-							</p>
-						</div>
-					</div>
-				</div>
+				</motion.h3>
+				<motion.div
+					className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+					variants={container}
+					initial="initial"
+					whileInView="animate"
+				>
+					<AchievementCard
+						title="AbCD"
+						description="short desc"
+						imageHolder={ImageHolder}
+					/>
+					<AchievementCard
+						title="AbCD"
+						description="short desc"
+						imageHolder={ImageHolder}
+					/>
+					<AchievementCard
+						title="AbCD"
+						description="short desc"
+						imageHolder={ImageHolder}
+					/>
+				</motion.div>
 				<div className="my-4">
-					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
+					<motion.h3
+						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					>
 						Voice From the Farmers
-					</h3>
+					</motion.h3>
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+					<motion.div
+						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
 						<ReviewCard
 							imageUrl={ProfileHolder}
 							name="U Tin Aung"
@@ -126,15 +142,28 @@ const Ourwork: NextPage = () => {
 							name="U Tin Aung"
 							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
 						/>
-					</div>
+					</motion.div>
 				</div>
 
 				<div>
-					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
+					<motion.h3
+						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					>
 						Our Value Chain Strategy
-					</h3>
-					<div className="flex justify-center flex-col sm:flex-row sm:space-x-4">
-						<div className="flex flex-col justify-center">
+					</motion.h3>
+					<motion.div
+						className="flex justify-center flex-col sm:flex-row sm:space-x-4"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<motion.div
+							className="flex flex-col justify-center"
+							variants={fadeUp}
+						>
 							<Image
 								src={InputShopImg}
 								alt={"Input Shop Img"}
@@ -144,25 +173,36 @@ const Ourwork: NextPage = () => {
 							<p className="text-center text-md lg:text-xl mt-4">
 								Inputs Shop
 							</p>
-						</div>
+						</motion.div>
 
-						{/* Line */}
-						<div className="hidden sm:flex items-center">
+						{/* Line Horizontal */}
+						<motion.div
+							className="hidden sm:flex items-center"
+							variants={slideIn}
+						>
 							<Image
 								src={LineHorizontal}
 								alt={"horizontal line"}
 								width={80}
 							/>
-						</div>
-						<div className="flex sm:hidden items-center justify-center my-4 sm:my-0">
+						</motion.div>
+
+						{/* Line Vertical */}
+						<motion.div
+							className="flex sm:hidden items-center justify-center my-4 sm:my-0"
+							variants={fadeUp}
+						>
 							<Image
 								src={LineVertical}
 								alt={"horizontal line"}
 								height={100}
 							/>
-						</div>
+						</motion.div>
 
-						<div className="flex flex-col justify-center">
+						<motion.div
+							className="flex flex-col justify-center"
+							variants={fadeUp}
+						>
 							<Image
 								src={SubstainablePartnerShip}
 								alt={"Substainable Parnership"}
@@ -172,23 +212,35 @@ const Ourwork: NextPage = () => {
 							<p className="text-center text-md lg:text-xl mt-4">
 								Substainable Partnership
 							</p>
-						</div>
-						{/* Line */}
-						<div className="hidden sm:flex items-center">
+						</motion.div>
+
+						{/* Line Horizontal */}
+						<motion.div
+							className="hidden sm:flex items-center"
+							variants={slideIn}
+						>
 							<Image
 								src={LineHorizontal}
 								alt={"horizontal line"}
 								width={80}
 							/>
-						</div>
-						<div className="flex sm:hidden items-center justify-center my-4 sm:my-0">
+						</motion.div>
+
+						{/* Line Vertical */}
+						<motion.div
+							className="flex sm:hidden items-center justify-center my-4 sm:my-0"
+							variants={fadeUp}
+						>
 							<Image
 								src={LineVertical}
 								alt={"horizontal line"}
 								height={100}
 							/>
-						</div>
-						<div className="flex flex-col justify-center">
+						</motion.div>
+						<motion.div
+							className="flex flex-col justify-center"
+							variants={fadeUp}
+						>
 							<Image
 								src={ContractFarming}
 								alt={"Contract Farming Img"}
@@ -198,24 +250,35 @@ const Ourwork: NextPage = () => {
 							<p className="text-center text-md lg:text-xl mt-4">
 								Contract Farming
 							</p>
-						</div>
-						{/* Line */}
-						{/* Line */}
-						<div className="hidden sm:flex items-center">
+						</motion.div>
+
+						{/* Line Horizontal */}
+						<motion.div
+							className="hidden sm:flex items-center"
+							variants={slideIn}
+						>
 							<Image
 								src={LineHorizontal}
 								alt={"horizontal line"}
 								width={80}
 							/>
-						</div>
-						<div className="flex sm:hidden items-center justify-center my-4 sm:my-0">
+						</motion.div>
+
+						{/* Line Vertical */}
+						<motion.div
+							className="flex sm:hidden items-center justify-center my-4 sm:my-0"
+							variants={fadeUp}
+						>
 							<Image
 								src={LineVertical}
 								alt={"horizontal line"}
 								height={100}
 							/>
-						</div>
-						<div className="flex flex-col justify-center">
+						</motion.div>
+						<motion.div
+							className="flex flex-col justify-center"
+							variants={fadeUp}
+						>
 							<Image
 								src={RegionalMarket}
 								alt={"Regional Market Img"}
@@ -225,47 +288,67 @@ const Ourwork: NextPage = () => {
 							<p className="text-center text-md lg:text-xl mt-4">
 								Regional Market
 							</p>
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 				</div>
 				<div>
-					<h3 className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12">
+					<motion.h3
+						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					>
 						Our Publication: Farm Record & Farmer Story
-					</h3>
-					<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-						<div>
+					</motion.h3>
+					<motion.div
+						className="grid grid-cols-1 sm:grid-cols-3 gap-3"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<motion.div variants={slideIn}>
 							<Image
 								src={BookCoverImg}
 								alt={"taungthutada Book Cover"}
 							/>
-						</div>
-						<div>
+						</motion.div>
+						<motion.div variants={slideIn}>
 							<Image
 								src={CalendarImg}
 								alt={"taungthutada calendar"}
 							/>
-						</div>
-						<div>
+						</motion.div>
+						<motion.div variants={slideIn}>
 							<Image
 								src={RecordImg}
 								alt={"taungthutada record"}
 							/>
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 				</div>
 			</section>
 
 			{/* Activities Section */}
 			<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4 bg-white">
-				<h3 className="font-bold text-xl sm:text-2xl text-center my-12 sm:my-12">
+				<motion.h3
+					className="font-bold text-xl sm:text-2xl text-center my-12 sm:my-12"
+					variants={fadeUp}
+					initial="initial"
+					whileInView="animate"
+				>
 					Our Previous Projects
-				</h3>
-				<div className="flex justify-center">
+				</motion.h3>
+				<motion.div
+					className="flex justify-center"
+					variants={fade}
+					initial="initial"
+					whileInView="animate"
+				>
 					<Image
 						src={ActivitiesImg}
 						alt={"taungthutada team activites"}
 					/>
-				</div>
+				</motion.div>
 				<div className="">
 					<ActivityCard
 						title="Project: Farmer Partnership -
