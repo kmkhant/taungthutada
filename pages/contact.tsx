@@ -6,6 +6,9 @@ import React, {
 } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
+import { motion } from "framer-motion";
+import { fadeUp, container, fade } from "../variants";
+
 const ContactPage: NextPage = () => {
 	const [name, setName] = useState<string>("");
 	const [email, setEmail] = useState<string>("");
@@ -136,23 +139,44 @@ const ContactPage: NextPage = () => {
 		<main>
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
-					<div className="w-16 h-0.5 bg-white rounded-full mt-3"></div>
-					<div className="sm:w-[600px]">
-						<p className="text-white font-semibold text-xl lg:text-2xl">
+					<motion.div
+						className="w-16 h-0.5 bg-white rounded-full mt-3"
+						variants={fadeUp}
+						initial="initial"
+						whileInView="animate"
+					></motion.div>
+					<motion.div
+						className="sm:w-[600px]"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<motion.p
+							className="text-white font-semibold text-xl lg:text-2xl"
+							variants={fadeUp}
+						>
 							OUR MISSION
-						</p>
-						<p className="text-white text-md lg:text-lg">
+						</motion.p>
+						<motion.p
+							className="text-white text-md lg:text-lg"
+							variants={fadeUp}
+						>
 							Becoming impact-oriented value chain
 							development firm and at the same time, to
 							empower rural community members, women and
 							youths through economic opportunities, and
 							market access.
-						</p>
-					</div>
+						</motion.p>
+					</motion.div>
 				</div>
 			</section>
 			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white h-[1000px] pt-3">
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+				<motion.div
+					className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+					variants={fade}
+					initial="initial"
+					whileInView="animate"
+				>
 					<div>
 						<div>
 							<h3 className="font-bold text-lg sm:text-xl mt-4 mb-1">
@@ -245,7 +269,7 @@ const ContactPage: NextPage = () => {
 							</button>
 						</form>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 		</main>
 	);
