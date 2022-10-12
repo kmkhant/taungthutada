@@ -4,7 +4,7 @@ import { NextPage } from "next";
 const CareerPage: NextPage = () => {
 	return (
 		<div>
-			<p>Hi Mom</p>
+			<p>Hi Mom and Dad</p>
 		</div>
 	);
 };
