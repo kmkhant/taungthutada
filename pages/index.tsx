@@ -28,10 +28,10 @@ import ProjectHolderImg from "../public/projectHolder.png";
 import ProjectCard from "../components/ProjectCard";
 import ReviewCard from "../components/ReviewCard";
 
-import { useRouter } from "next/router";
-
 // language data
-import { en, my } from "../assets/locales/home";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ILocale } from "../@types.taungthutada";
 
 // framer motion
 import { motion } from "framer-motion";
@@ -52,14 +52,12 @@ import CountUp from "react-countup";
 // Intersection Observer
 
 const Home: NextPage = () => {
-	const router = useRouter();
-
-	const t = router.locale === "en" ? en : my;
+	const { t } = useTranslation("common");
 
 	return (
 		<div>
 			<Head>
-				<title>{t.hero}</title>
+				<title>{t("hero.title")}</title>
 				<meta
 					name="description"
 					content="Assisting farmers with the initial aim to increase the information access for farmers in Southern Shan State"
@@ -92,7 +90,7 @@ const Home: NextPage = () => {
 									initial="initial"
 									whileInView="animate"
 								>
-									{t.hero}
+									{t("hero.title")}
 								</motion.h1>
 							</div>
 							<br />
@@ -629,5 +627,13 @@ const Home: NextPage = () => {
 		</div>
 	);
 };
+
+export const getStaticProps = async ({
+	locale,
+}: ILocale) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});
 
 export default Home;

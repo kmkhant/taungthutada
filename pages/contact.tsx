@@ -8,6 +8,10 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 import { motion } from "framer-motion";
 import { fadeUp, container, fade } from "../variants";
+import Head from "next/head";
+import SEO from "../components/SEO/SEO";
+import { ILocale } from "../@types.taungthutada";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const ContactPage: NextPage = () => {
 	const [name, setName] = useState<string>("");
@@ -137,6 +141,7 @@ const ContactPage: NextPage = () => {
 
 	return (
 		<main>
+			<SEO title="Contact" />
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<motion.div
@@ -274,5 +279,13 @@ const ContactPage: NextPage = () => {
 		</main>
 	);
 };
+
+export const getStaticProps = async ({
+	locale,
+}: ILocale) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});
 
 export default ContactPage;

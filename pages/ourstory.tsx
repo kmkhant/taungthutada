@@ -13,10 +13,14 @@ import {
 	fade,
 	scaleUp,
 } from "../variants";
+import SEO from "../components/SEO/SEO";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ILocale } from "../@types.taungthutada";
 
 const OurStory: NextPage = () => {
 	return (
 		<main>
+			<SEO title="Our Story" />
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<motion.div
@@ -204,5 +208,13 @@ const OurStory: NextPage = () => {
 		</main>
 	);
 };
+
+export const getStaticProps = async ({
+	locale,
+}: ILocale) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});
 
 export default OurStory;
