@@ -4,10 +4,14 @@ import ActivitiyTimeline from "../components/ActivitiyTimeline";
 
 import { motion } from "framer-motion";
 import { fadeUp, container } from "../variants";
+import SEO from "../components/SEO/SEO";
+import { ILocale } from "../@types.taungthutada";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const ActivitiesPage: NextPage = () => {
 	return (
 		<main>
+			<SEO title="Activities" />
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<motion.div
@@ -56,5 +60,13 @@ const ActivitiesPage: NextPage = () => {
 		</main>
 	);
 };
+
+export const getServerSideProps = async ({
+	locale,
+}: ILocale) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});
 
 export default ActivitiesPage;

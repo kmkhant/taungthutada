@@ -3,7 +3,8 @@ import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import { StateContext } from "../context/StateContext";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { Suspense } from "react";
+import { appWithTranslation } from "next-i18next";
+
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<GoogleReCaptchaProvider
@@ -24,4 +25,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 	);
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

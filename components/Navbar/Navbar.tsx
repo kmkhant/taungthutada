@@ -9,11 +9,15 @@ import DrawerLink from "../Drawer/DrawerLink";
 import NavbarButton from "./NavbarButton";
 import { useRouter } from "next/router";
 
-// language
-import { en, my } from "../../assets/locales/navbar";
+// flag
+import MyanmarFlag from "../../public/flags/my.png";
+import EnglishFlag from "../../public/flags/en.png";
 
 // framer motion
 import { motion } from "framer-motion";
+
+// language
+import { useTranslation } from "next-i18next";
 
 const Navbar: React.FC = () => {
 	const { isDrawerOpen, setIsDrawerOpen } =
@@ -35,21 +39,19 @@ const Navbar: React.FC = () => {
 			const locale = "my";
 			router.push(
 				router.pathname,
-				`/my/${router.pathname}`,
+				`/my${router.pathname}`,
 				{ locale }
 			);
 		} else {
 			// change to english
 			const locale = "en";
-			router.push(
-				router.pathname,
-				`/en/${router.pathname}`,
-				{ locale }
-			);
+			router.push(router.pathname, `${router.pathname}`, {
+				locale,
+			});
 		}
 	}
 
-	const t = router.locale === "en" ? en : my;
+	const { t } = useTranslation("common");
 
 	return (
 		<>
@@ -70,19 +72,23 @@ const Navbar: React.FC = () => {
 				<div className="hidden sm:flex z-20 justify-center items-center space-x-10">
 					<NavbarButton
 						to="/ourwork"
-						description={t.ourwork}
+						description={t("navbar.ourwork")}
 					/>
 					<NavbarButton
 						to="/ourstory"
-						description={t.ourstory}
+						description={t("navbar.ourstory")}
 					/>
 					<NavbarButton
 						to="/activities"
-						description={t.activities}
+						description={t("navbar.activities")}
 					/>
 					<NavbarButton
 						to="/contact"
-						description={t.contact}
+						description={t("navbar.contact")}
+					/>
+					<NavbarButton
+						to="/career"
+						description={t("navbar.career")}
 					/>
 				</div>
 				{/* Humburger Menu */}
@@ -131,23 +137,54 @@ const Navbar: React.FC = () => {
 						scale: 0.9,
 					}}
 				>
-					<p>{router.locale}</p>
+					<div className="flex space-x-2">
+						{router.locale === "my" ? (
+							<Image
+								src={MyanmarFlag}
+								width={24}
+								height={24}
+								layout="fixed"
+								alt="Myanmar Flag"
+								className="rounded-full"
+							/>
+						) : (
+							<Image
+								src={EnglishFlag}
+								width={24}
+								height={24}
+								layout="fixed"
+								alt="English Flag"
+							/>
+						)}
+
+						<p>{router.locale}</p>
+					</div>
 				</motion.button>
 			</nav>
 			<Drawer>
-				<DrawerLink to="/ourwork" description={t.ourwork} />
+				<DrawerLink
+					to="/ourwork"
+					description={t("navbar.ourwork")}
+				/>
 
 				<DrawerLink
 					to="/ourstory"
-					description={t.ourstory}
+					description={t("navbar.ourstory")}
 				/>
 
 				<DrawerLink
 					to="/activities"
-					description={t.activities}
+					description={t("navbar.activities")}
 				/>
 
-				<DrawerLink to="/contact" description={t.contact} />
+				<DrawerLink
+					to="/contact"
+					description={t("navbar.contact")}
+				/>
+				<DrawerLink
+					to="/career"
+					description={t("navbar.career")}
+				/>
 			</Drawer>
 		</>
 	);

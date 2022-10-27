@@ -28,6 +28,11 @@ import ActivityCard from "../components/ActivityCard";
 
 import { motion } from "framer-motion";
 
+// Languages
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ILocale } from "../@types.taungthutada";
+
 // variants
 import {
 	fadeUp,
@@ -35,10 +40,14 @@ import {
 	slideIn,
 	fade,
 } from "../variants";
+import SEO from "../components/SEO/SEO";
 
 const Ourwork: NextPage = () => {
+	const { t } = useTranslation("common");
+
 	return (
 		<main>
+			<SEO title="Our Work" />
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<motion.div
@@ -391,5 +400,13 @@ Farm Consultaion"
 		</main>
 	);
 };
+
+export const getStaticProps = async ({
+	locale,
+}: ILocale) => ({
+	props: {
+		...(await serverSideTranslations(locale, ["common"])),
+	},
+});
 
 export default Ourwork;

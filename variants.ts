@@ -73,7 +73,7 @@ export const container = {
 	animate: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.3,
+			staggerChildren: 0.15,
 		},
 	},
 };

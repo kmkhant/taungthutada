@@ -30,3 +30,7 @@ export interface MemberProfileProps {
 	linkedIn: string;
 	email: string;
 }
+
+export interface ILocale {
+	locale: "en" | "my";
+}
