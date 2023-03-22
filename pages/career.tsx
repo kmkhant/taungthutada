@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import BackgroundImage from "../public/career/bg.jpg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import SEO from "../components/SEO/SEO";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ILocale } from "../@types.taungthutada";
@@ -23,8 +23,6 @@ const CareerPage: NextPage = () => {
 						</h1>
 					</div>
 				</div>
-
-				<p>Hi Mom and Dad</p>
 			</section>
 		</main>
 	);

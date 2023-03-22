@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import ImageHolder from "../public/image_holder.svg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import ReviewCard from "../components/ReviewCard";
 import ProfileHolder from "../public/profile-holder.svg";
 
@@ -33,6 +33,12 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ILocale } from "../@types.taungthutada";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCoins,
+	faUsers,
+} from "@fortawesome/free-solid-svg-icons";
+
 // variants
 import {
 	fadeUp,
@@ -47,7 +53,7 @@ const Ourwork: NextPage = () => {
 
 	return (
 		<main>
-			<SEO title="Our Work" />
+			<SEO title="Our Mission" />
 			<section className="bg-midColor h-[350px] flex justify-center items-center">
 				<div className="flex space-x-2">
 					<motion.div
@@ -75,11 +81,10 @@ const Ourwork: NextPage = () => {
 							className="text-white text-md lg:text-lg"
 							variants={fadeUp}
 						>
-							Becoming impact-oriented value chain
-							development firm and at the same time, to
-							empower rural community members, women and
-							youths through economic opportunities, and
-							market access.
+							Taungthutada, TTTD envisions a rural area
+							where each farmer is able to access resources
+							and receive fair reward for their efforts in
+							rural economy and our food system as a whole.
 						</motion.p>
 					</motion.div>
 				</div>
@@ -91,7 +96,7 @@ const Ourwork: NextPage = () => {
 					initial="initial"
 					whileInView="animate"
 				>
-					Our Achievements
+					Our Achievement
 				</motion.h3>
 				<motion.div
 					className="grid grid-cols-1 sm:grid-cols-3 gap-3"
@@ -156,13 +161,22 @@ const Ourwork: NextPage = () => {
 
 				<div>
 					<motion.h3
-						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
+						className="font-bold text-xl lg:text-2xl text-center my-6 sm:my-6"
 						variants={fadeUp}
 						initial="initial"
 						whileInView="animate"
 					>
 						Our Value Chain Strategy
 					</motion.h3>
+					<motion.p className="text-center px-16 mb-4">
+						We are a Value-chain Development Firm that aims
+						to grow, transport & transform crops into
+						sustainable responsible products and commodities
+						in rural areas with small-holder farmers for the
+						purpose of offering these high-quality products
+						in Local, ASEAN, and international markets at a
+						highly competitive price.
+					</motion.p>
 					<motion.div
 						className="flex justify-center flex-col sm:flex-row sm:space-x-4"
 						variants={container}
@@ -298,6 +312,84 @@ const Ourwork: NextPage = () => {
 								Regional Market
 							</p>
 						</motion.div>
+					</motion.div>
+				</div>
+				<div className="mt-[60px]">
+					<motion.div
+						className="grid grid-cols-2"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<div className="flex justify-center">
+							<motion.div variants={fadeUp}>
+								<motion.h3 className="font-bold text-xl lg:text-2xl text-center my-6">
+									Our Services
+								</motion.h3>
+								<ul className="list-disc">
+									<li>Contact Farming</li>
+									<li>Innovative Inputs Service</li>
+									<li>Business Development & Souring</li>
+								</ul>
+							</motion.div>
+						</div>
+						<div className="flex justify-center">
+							<motion.div variants={fadeUp}>
+								<motion.h3 className="font-bold text-xl lg:text-2xl text-center my-6">
+									Social Impact
+								</motion.h3>
+								<ul className="list-disc">
+									<li>Women empowerment in Supply Chain</li>
+									<li>
+										Marginalized youths and community
+										employment
+									</li>
+								</ul>
+							</motion.div>
+						</div>
+						<div className="col-span-2">
+							<div className="flex justify-center">
+								<motion.div variants={fadeUp}>
+									<motion.h3 className="font-bold text-xl lg:text-2xl text-center my-6">
+										Finance
+									</motion.h3>
+									<div className="grid grid-cols-2 gap-4">
+										<div className="flex justify-center">
+											<div>
+												<div className="flex justify-center">
+													<FontAwesomeIcon
+														icon={faCoins}
+														className="w-[40px] text-mainColor"
+													/>
+												</div>
+
+												<p className="text-center mt-2">
+													USD $40,000
+													<br />
+													(Grants, Equity Investment &
+													Parnership Projects)
+												</p>
+											</div>
+										</div>
+										<div className="flex justify-center">
+											<div>
+												<div className="flex justify-center">
+													<FontAwesomeIcon
+														icon={faUsers}
+														className="w-[40px] text-mainColor"
+													/>
+												</div>
+												<p className="text-center mt-2">
+													835
+													<br />
+													(Training, Users, and Support)
+												</p>
+											</div>
+										</div>
+									</div>
+								</motion.div>
+							</div>
+						</div>
 					</motion.div>
 				</div>
 				<div>

@@ -4,6 +4,8 @@ import Layout from "../components/Layout";
 import { StateContext } from "../context/StateContext";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { appWithTranslation } from "next-i18next";
+import { createTheme } from "@mui/system";
+import { ThemeProvider } from "@emotion/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
