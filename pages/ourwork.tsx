@@ -2,8 +2,6 @@ import React from "react";
 import { NextPage } from "next";
 import ImageHolder from "../public/image_holder.svg";
 import Image from "next/legacy/image";
-import ReviewCard from "../components/ReviewCard";
-import ProfileHolder from "../public/profile-holder.svg";
 
 /* Achievement Section */
 import AchievementCard from "../components/AchievementCard";
@@ -15,16 +13,6 @@ import ContractFarming from "../public/ourwork/contract-framing.svg";
 import RegionalMarket from "../public/ourwork/regional-market.svg";
 import LineVertical from "../public/ourwork/line-vertical.svg";
 import LineHorizontal from "../public/ourwork/line-horizontal.svg";
-
-/* Publication Images */
-import BookCoverImg from "../public/ourwork/book.png";
-import CalendarImg from "../public/ourwork/calendar.png";
-import RecordImg from "../public/ourwork/record.png";
-
-/* Activities Section */
-import ActivitiesImg from "../public/ourwork/team-activities.svg";
-import PlaceHolderImg from "../public/image_holder.svg";
-import ActivityCard from "../components/ActivityCard";
 
 import { motion } from "framer-motion";
 
@@ -47,6 +35,9 @@ import {
 	fade,
 } from "../variants";
 import SEO from "../components/SEO/SEO";
+
+import HEKSlogo from "../assets/partners/heks-logo.jpg";
+import SANTHITlogo from "../assets/partners/santhit-logo.png";
 
 const Ourwork: NextPage = () => {
 	const { t } = useTranslation("common");
@@ -73,7 +64,7 @@ const Ourwork: NextPage = () => {
 								className="text-white font-semibold text-xl lg:text-2xl"
 								variants={fadeUp}
 							>
-								OUR MISSION
+								Our Vision
 							</motion.p>
 						</div>
 
@@ -96,7 +87,7 @@ const Ourwork: NextPage = () => {
 					initial="initial"
 					whileInView="animate"
 				>
-					Our Achievement
+					Our Achievements
 				</motion.h3>
 				<motion.div
 					className="grid grid-cols-1 sm:grid-cols-3 gap-3"
@@ -120,45 +111,14 @@ const Ourwork: NextPage = () => {
 						imageHolder={ImageHolder}
 					/>
 				</motion.div>
-				<div className="my-4">
-					<motion.h3
-						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
-						variants={fadeUp}
-						initial="initial"
-						whileInView="animate"
-					>
-						Voice From the Farmers
-					</motion.h3>
 
-					<motion.div
-						className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-						variants={container}
-						initial="initial"
-						whileInView="animate"
-					>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Quisque at ante non turpis euismod viverra. Fusce ipsum urna, suscipit in vestibulum vel, vehicula non nibh. Sed id tincidunt tortor. Nulla dolor nulla, ullamcorper quis sagittis nec, convallis id purus. Maecenas quis gravida lacus. Vivamus non eros erat. Etiam fringilla justo sit amet libero condimentum, at hendrerit."
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-					</motion.div>
+				<div>
+					<h3 className="font-bold text-xl lg:text-2xl text-center mt-6">
+						Our Farmer Story
+					</h3>
 				</div>
 
+				{/* MOVE */}
 				<div>
 					<motion.h3
 						className="font-bold text-xl lg:text-2xl text-center my-6 sm:my-6"
@@ -392,102 +352,28 @@ const Ourwork: NextPage = () => {
 						</div>
 					</motion.div>
 				</div>
-				<div>
-					<motion.h3
-						className="font-bold text-xl lg:text-2xl text-center my-12 sm:my-12"
-						variants={fadeUp}
-						initial="initial"
-						whileInView="animate"
-					>
-						Our Publication: Farm Record & Farmer Story
-					</motion.h3>
-					<motion.div
-						className="grid grid-cols-1 sm:grid-cols-3 gap-3"
-						variants={container}
-						initial="initial"
-						whileInView="animate"
-					>
-						<motion.div variants={slideIn}>
-							<Image
-								src={BookCoverImg}
-								alt={"taungthutada Book Cover"}
-							/>
-						</motion.div>
-						<motion.div variants={slideIn}>
-							<Image
-								src={CalendarImg}
-								alt={"taungthutada calendar"}
-							/>
-						</motion.div>
-						<motion.div variants={slideIn}>
-							<Image
-								src={RecordImg}
-								alt={"taungthutada record"}
-							/>
-						</motion.div>
-					</motion.div>
-				</div>
 			</section>
-
-			{/* Activities Section */}
-			<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4 bg-white">
-				<motion.h3
-					className="font-bold text-xl sm:text-2xl text-center my-12 sm:my-12"
+			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white"></section>
+			<section className="mx-4 sm:mx-8 lg:mx-16 bg-white">
+				<motion.div
 					variants={fadeUp}
 					initial="initial"
 					whileInView="animate"
 				>
-					Our Previous Projects
-				</motion.h3>
-				<motion.div
-					className="flex justify-center"
-					variants={fade}
-					initial="initial"
-					whileInView="animate"
-				>
-					<Image
-						src={ActivitiesImg}
-						alt={"taungthutada team activites"}
-					/>
+					<h3 className="font-bold text-xl lg:text-2xl text-center mt-6">
+						Our Partners
+					</h3>
+					<div className="flex justify-center flex-col md:flex-row">
+						<Image
+							src={HEKSlogo}
+							alt="heks-logo"
+							width={757.5 / 2}
+							height={411.3 / 2}
+							objectFit="contain"
+						/>
+						<Image src={SANTHITlogo} alt="santhit-logo" />
+					</div>
 				</motion.div>
-				<div className="">
-					<ActivityCard
-						title="Project: Farmer Partnership -
-Farm Consultaion"
-						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
-						image={PlaceHolderImg}
-						slug={"demo"}
-						flip={false}
-					/>
-					<hr className="mt-4" />
-					<ActivityCard
-						title="Project: Farmer Partnership -
-Farm Consultaion"
-						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
-						image={PlaceHolderImg}
-						slug={"demo"}
-						flip={true}
-					/>
-					<hr className="mt-4" />
-					<ActivityCard
-						title="Project: Farmer Partnership -
-Farm Consultaion"
-						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
-						image={PlaceHolderImg}
-						slug={"demo"}
-						flip={false}
-					/>
-					<hr className="mt-4" />
-					<ActivityCard
-						title="Project: Farmer Partnership -
-Farm Consultaion"
-						description="TTTD team worked with HEKS Myanmar for rapid market assessment of inputs market system in Myanmar. The project is intended to facilitate the input assistance to farmers and TTTD is considered to be the data collection team of the project to farmers and"
-						image={PlaceHolderImg}
-						slug={"demo"}
-						flip={true}
-					/>
-					<hr className="mt-4" />
-				</div>
 			</section>
 		</main>
 	);

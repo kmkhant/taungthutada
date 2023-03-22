@@ -69,8 +69,8 @@ const Navbar: React.FC = () => {
 				</div>
 				<div className="hidden sm:flex z-20 justify-center items-center space-x-10">
 					<NavbarButton
-						to="/ourmission"
-						description={t("navbar.ourmission")}
+						to="/ourwork"
+						description={t("navbar.ourwork")}
 					/>
 					<NavbarButton
 						to="/ourstory"
