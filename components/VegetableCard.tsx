@@ -12,7 +12,7 @@ const VegetableCard: React.FC<VegetableCardProps> = ({
 }) => {
 	return (
 		<div className="flex flex-col justify-center">
-			<Image src={img} alt={name} layout="responsive" />
+			<Image src={img} alt={name} />
 			<p className="text-center">{name}</p>
 		</div>
 	);
