@@ -16,11 +16,7 @@ const AchievementCard: React.FC<IAchievementCard> = ({
 	return (
 		<motion.div className="bg-mainColor" variants={slideIn}>
 			<div>
-				<Image
-					src={imageHolder}
-					alt={"Iimage"}
-					layout="responsive"
-				/>
+				<Image src={imageHolder} alt={"Iimage"} />
 			</div>
 			<div className="pt-4 pb-6">
 				<h3 className="font-semibold text-white text-lg lg:text-xl text-center">
