@@ -493,6 +493,8 @@ Farm Consultaion"
 	);
 };
 
+// test
+
 export const getStaticProps = async ({
 	locale,
 }: ILocale) => ({
