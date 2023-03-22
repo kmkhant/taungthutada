@@ -78,6 +78,21 @@ export const container = {
 	},
 };
 
+export const milestoneContainer = {
+	initial: {
+		opacity: 0,
+		y: -20,
+	},
+	animate: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			staggerChildren: 0.15,
+			duration: 0.6,
+		},
+	},
+};
+
 export const slideIn = {
 	initial: {
 		opacity: 0,

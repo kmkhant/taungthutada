@@ -18,7 +18,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 	flip,
 }) => {
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
 			{!flip && (
 				<div className="flex justify-start">
 					<Image src={image} alt={"ttt"} />
@@ -34,8 +34,8 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 				<p className="text-md mt-4">{description}</p>
 				<p className="my-4 text-md font-bold cursor-pointer">
 					<Link href={`/activities/detail/${slug}`}>
-						<a>Learn More &nbsp;{`->`}</a>
-					</Link>
+                        Learn More{`->`}
+                    </Link>
 				</p>
 			</div>
 			{flip && (
@@ -44,7 +44,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 				</div>
 			)}
 		</div>
-	);
+    );
 };
 
 export default ActivityCard;

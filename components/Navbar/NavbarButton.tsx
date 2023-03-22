@@ -16,7 +16,7 @@ const NavbarButton: React.FC<NavButtonProps> = ({
 	const current = router.pathname === to;
 
 	return (
-		<Link href={to}>
+		<Link href={to} legacyBehavior>
 			<p
 				className={`relative group cursor-pointer ${
 					current
@@ -24,7 +24,7 @@ const NavbarButton: React.FC<NavButtonProps> = ({
 						: ""
 				}`}
 			>
-				<a className="text-white text-sm sm:text-md">
+				<a className="text-white text-[12px]">
 					{description}
 				</a>
 				{!current && (

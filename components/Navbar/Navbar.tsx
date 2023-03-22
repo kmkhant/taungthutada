@@ -58,29 +58,27 @@ const Navbar: React.FC = () => {
 			<nav className="fixed flex justify-between items-center top-0 z-50 px-6 sm:px-16 w-full py-2 h-[65px] bg-mainColor bg-opacity-60 backdrop-blur-sm">
 				<div className="self-start justify-self-start">
 					<Link href="/">
-						<a>
-							<Image
-								src={Logo}
-								alt="taungthutada logo"
-								width={50}
-								height={50}
-								className="z-20 cursor-pointer"
-							/>
-						</a>
+						<Image
+							src={Logo}
+							alt="taungthutada logo"
+							width={50}
+							height={50}
+							className="z-20 cursor-pointer"
+						/>
 					</Link>
 				</div>
 				<div className="hidden sm:flex z-20 justify-center items-center space-x-10">
 					<NavbarButton
-						to="/ourwork"
-						description={t("navbar.ourwork")}
+						to="/ourmission"
+						description={t("navbar.ourmission")}
 					/>
 					<NavbarButton
 						to="/ourstory"
 						description={t("navbar.ourstory")}
 					/>
 					<NavbarButton
-						to="/activities"
-						description={t("navbar.activities")}
+						to="/ourmilestones"
+						description={t("navbar.ourmilestones")}
 					/>
 					<NavbarButton
 						to="/contact"
@@ -143,7 +141,6 @@ const Navbar: React.FC = () => {
 								src={MyanmarFlag}
 								width={24}
 								height={24}
-								layout="fixed"
 								alt="Myanmar Flag"
 								className="rounded-full"
 							/>
@@ -152,7 +149,6 @@ const Navbar: React.FC = () => {
 								src={EnglishFlag}
 								width={24}
 								height={24}
-								layout="fixed"
 								alt="English Flag"
 							/>
 						)}

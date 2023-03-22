@@ -16,17 +16,17 @@ const DrawerLink: React.FC<DrawerLinkProps> = ({
 		useStateContext() as ContextProps;
 
 	return (
-		<Link href={to}>
-			<a>
-				<p
-					className="text-white text-lg text-center py-4"
-					onClick={() => setIsDrawerOpen(false)}
-				>
-					{description}
-				</p>
-			</a>
-		</Link>
-	);
+        (<Link href={to}>
+
+            <p
+                className="text-white text-lg text-center py-4"
+                onClick={() => setIsDrawerOpen(false)}
+            >
+                {description}
+            </p>
+
+        </Link>)
+    );
 };
 
 export default DrawerLink;

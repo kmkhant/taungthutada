@@ -160,17 +160,14 @@ const ContactPage: NextPage = () => {
 							className="text-white font-semibold text-xl lg:text-2xl"
 							variants={fadeUp}
 						>
-							OUR MISSION
+							OUR OFFICE
 						</motion.p>
 						<motion.p
 							className="text-white text-md lg:text-lg"
 							variants={fadeUp}
 						>
-							Becoming impact-oriented value chain
-							development firm and at the same time, to
-							empower rural community members, women and
-							youths through economic opportunities, and
-							market access.
+							(PHYAR PHYU1-WARD), LOI KAW ROAD, HSI-HSENG
+							TOWNSHIP, SOUTHERN SHAN STATE,MYANAMR
 						</motion.p>
 					</motion.div>
 				</div>
@@ -185,14 +182,6 @@ const ContactPage: NextPage = () => {
 					<div>
 						<div>
 							<h3 className="font-bold text-lg sm:text-xl mt-4 mb-1">
-								TAUNGGYI
-							</h3>
-							<p className="text-md lg:text-lg">
-								No-102 Innyar St, TAUNGGYI, Shan, Myanmar
-							</p>
-						</div>
-						<div>
-							<h3 className="font-bold text-lg sm:text-xl mt-4 mb-1">
 								Contact Us
 							</h3>
 
@@ -200,8 +189,13 @@ const ContactPage: NextPage = () => {
 								Phone : +959123456789
 							</p>
 							<p className="text-md lg:text-lg">
-								{" "}
 								Email : support@taungthutada.com
+							</p>
+							<p className="text-md lg:text-lg">
+								Website : www.taungthutada.com
+							</p>
+							<p className="text-md lg:text-lg">
+								Facebook : www.facebook.com/taungthutada
 							</p>
 						</div>
 					</div>
