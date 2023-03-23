@@ -254,7 +254,7 @@ const Activities: NextPage = () => {
 	);
 };
 
-export const getServerSideProps = async ({
+export const getStaticProps = async ({
 	locale,
 }: ILocale) => ({
 	props: {
