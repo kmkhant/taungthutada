@@ -71,7 +71,7 @@ const data = [
 			"Team is with 8 fulltime members and 3 part-time members ",
 	},
 ];
-const ActivitiesPage: NextPage = () => {
+const Ourmilestones: NextPage = () => {
 	const TimelineMotion = motion(Timeline);
 
 	return (
@@ -144,4 +144,4 @@ export const getServerSideProps = async ({
 	},
 });
 
-export default ActivitiesPage;
+export default Ourmilestones;
