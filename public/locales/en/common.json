@@ -1,10 +1,12 @@
 {
 	"navbar": {
 		"ourwork": "Our Work",
+		"activities": "Activities",
 		"ourstory": "Our Story",
 		"ourmilestones": "Our Milestones",
 		"contact": "Contact",
-		"career": "Career"
+		"career": "Career",
+		"resources": "Resources"
 	},
 	"hero": {
 		"title": "Taungthutada"

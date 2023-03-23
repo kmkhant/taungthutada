@@ -81,12 +81,20 @@ const Navbar: React.FC = () => {
 						description={t("navbar.ourmilestones")}
 					/>
 					<NavbarButton
+						to="/activities"
+						description={t("navbar.activities")}
+					/>
+					<NavbarButton
 						to="/contact"
 						description={t("navbar.contact")}
 					/>
 					<NavbarButton
 						to="/career"
 						description={t("navbar.career")}
+					/>
+					<NavbarButton
+						to="/resources"
+						description={t("navbar.resources")}
 					/>
 				</div>
 				{/* Humburger Menu */}
