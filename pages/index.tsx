@@ -237,7 +237,7 @@ const Home: NextPage = () => {
 						</motion.div>
 					</div>
 				</section>
-				<section className="mx-4 sm:mx-8 lg:mx-16 pb-8 sm:pb-32">
+				<section className="mx-4 sm:mx-8 lg:mx-16 pb-4 sm:pb-8">
 					<h3 className="font-bold text-center my-4 text-xl lg:text-2xl">
 						We were trying to be resilient and sustainable.
 					</h3>
@@ -438,35 +438,44 @@ const Home: NextPage = () => {
 					</div>
 				</section>
 
-				{/* Sustainability & Social Impacts */}
-				<section className="mx-4 sm:mx-8 lg:mx-16 py-4 sm:py-8">
-					<div className="flex space-x-10 border-dashed border-2 border-black rounded-lg p-8">
-						<div>
-							<h3 className="font-bold text-xl sm:text-2xl">
-								Substainability &<br />
-								Social Impacts
-							</h3>
-							<p className="lg:mt-4 text-md lg:text-xl">
-								Amet minim mollit non deserunt ullamco est
-								sit aliqua dolor do amet sint. Velit officia
-								consequat duis enim velit mollit.
-								Exercitation veniam consequat sunt nostrud
-								amet.
-							</p>
-						</div>
-						<div className="grow">
-							<Image
-								src={SimilingFarmerImg}
-								alt={"happy farmer"}
-							/>
-						</div>
-					</div>
-				</section>
+				{/* What Farmers Says */}
+				<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4">
+					<h3 className="font-bold text-xl sm:text-2xl text-center">
+						What Farmers Say About Us
+					</h3>
 
+					<motion.div
+						className="mt-2 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+						variants={container}
+						initial="initial"
+						whileInView="animate"
+					>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Quisque at ante non turpis euismod viverra. Fusce ipsum urna, suscipit in vestibulum vel, vehicula non nibh. Sed id tincidunt tortor. Nulla dolor nulla, ullamcorper quis sagittis nec, convallis id purus. Maecenas quis gravida lacus. Vivamus non eros erat. Etiam fringilla justo sit amet libero condimentum, at hendrerit."
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+						<ReviewCard
+							imageUrl={ProfileHolder}
+							name="U Tin Aung"
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
+						/>
+					</motion.div>
+				</section>
 				{/* Previous Projects */}
 				<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4">
 					<h3 className="font-semibold mb-8 text-xl lg:text-2xl">
-						Previous Projects
+						Latest Blogs
 					</h3>
 					{/* Swiper HERE */}
 					<Swiper
@@ -516,41 +525,6 @@ const Home: NextPage = () => {
 							/>
 						</SwiperSlide>
 					</Swiper>
-				</section>
-
-				{/* What Farmers Says */}
-				<section className="mx-4 sm:mx-8 lg:mx-16 py-2 sm:py-4">
-					<h3 className="font-bold text-xl sm:text-2xl text-center">
-						What Farmers Say About Us
-					</h3>
-
-					<motion.div
-						className="mt-2 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-						variants={container}
-						initial="initial"
-						whileInView="animate"
-					>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Quisque at ante non turpis euismod viverra. Fusce ipsum urna, suscipit in vestibulum vel, vehicula non nibh. Sed id tincidunt tortor. Nulla dolor nulla, ullamcorper quis sagittis nec, convallis id purus. Maecenas quis gravida lacus. Vivamus non eros erat. Etiam fringilla justo sit amet libero condimentum, at hendrerit."
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-						<ReviewCard
-							imageUrl={ProfileHolder}
-							name="U Tin Aung"
-							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum suscipit vehicula. Curabitur hendrerit mi a auctor ornare. Nullam vitae"
-						/>
-					</motion.div>
 				</section>
 			</main>
 		</div>
