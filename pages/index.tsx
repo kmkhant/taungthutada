@@ -48,8 +48,47 @@ import {
 
 // Count-Up
 import CountUp from "react-countup";
+import ImpactCard from "../components/Cards/ImpactCard";
+import {
+	faUsers,
+	faEarthAsia,
+	faSackDollar,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Intersection Observer
+
+const impactData = [
+	{
+		logo: faUsers,
+		title: "Impact Community & Space",
+		descriptions: [
+			"Membership",
+			"Community Events",
+			"Coworking Space",
+			"Venue Rental",
+		],
+	},
+	{
+		logo: faEarthAsia,
+		title: "Impact Solutions & Consultation",
+		descriptions: [
+			"Program Design",
+			"ESG Advisory",
+			"Board of Directors ESG Training",
+			"Impact Solution Sourcing for Corporates",
+			"Impact Measurements for ESG Integration",
+		],
+	},
+	{
+		logo: faSackDollar,
+		title: "Impact Community & Space",
+		descriptions: [
+			"Investment Readiness Program",
+			"Investment Matching",
+			"Impact Investment Education",
+		],
+	},
+];
 
 const Home: NextPage = () => {
 	const { t } = useTranslation("common");
@@ -94,6 +133,17 @@ const Home: NextPage = () => {
 								</motion.h1>
 							</div>
 							<br />
+							<div className="inline-block p-1 ">
+								<motion.h3
+									className="text-sm sm:text-xl font-light italic"
+									variants={fadeUpDelay}
+									initial="initial"
+									whileInView="animate"
+								>
+									&#8220;Connecting community of rural
+									farmers to profitable markets&#8221;
+								</motion.h3>
+							</div>
 							<div className="inline-block p-1 ">
 								<motion.h3
 									className="text-sm sm:text-xl font-light italic"
@@ -150,9 +200,10 @@ const Home: NextPage = () => {
 								&#x29; was started in September, 2019 with
 								the initial aim to increase the information
 								access for farmers in Southern Shan State.
-								All of us are primarily from farming
-								families and eager to serve the farmers as
-								much as we can.
+								The team did pivot along the way to adapt
+								the situation and was empowered by many
+								people(farmers, women and youths) and
+								organizations.
 							</p>
 						</motion.div>
 
@@ -184,240 +235,93 @@ const Home: NextPage = () => {
 								layout="responsive"
 							/>
 						</motion.div>
-
-						<motion.div
-							variants={fadeUp}
-							initial="initial"
-							whileInView="animate"
-						>
-							<h1 className="text-white font-semibold mt-3 text-md lg:text-2xl">
-								Solving Together With Farmers
-							</h1>
-							<div className="bg-white w-32 h-0.5 rounded-full mt-0.5"></div>
-							<p className="text-white text-sm lg:text-xl mt-4 font-light">
-								Since the beginning, TTTD team wanted to go
-								into fields and meet farmers, learn about
-								their problems and solve them. Therefore, at
-								the beginning of year 2020, the team put a
-								question of “ What if we start the a field
-								work in Taunggyi to do a feasibility and
-								impact study about farmers&apos;
-								livelihoods?”. We partnered with “ Farm Shop
-								“ to be a supplier for Shan Vegetables &
-								Fruits and growers for the crops such as
-								Pumpkin (Pyit Taing Htaung), Baby Kale and
-								Sweet Violet Waxy Corn from East-West Seeds.
-							</p>
-						</motion.div>
 					</div>
 				</section>
-
-				{/* Meet Farmers Section */}
 				<section className="mx-4 sm:mx-8 lg:mx-16 pb-8 sm:pb-32">
-					<motion.h1
-						className="font-bold text-center mt-8 text-lg sm:text-2xl"
-						variants={fadeUp}
-						initial="initial"
-						whileInView="animate"
-					>
-						MEET OUR FARMERS
-					</motion.h1>
-					<motion.div
-						className="flex flex-col sm:flex-row mt-8 space-y-10 sm:space-y-0 sm:space-x-10 justify-center"
-						variants={container}
-						initial="initial"
-						whileInView="animate"
-					>
-						<FarmerProfile
-							img={ProfileHolder}
-							name="U Sai Moe Shwe"
-						/>
-						<FarmerProfile
-							img={ProfileHolder}
-							name="Daw Nan Li"
-						/>
-						<FarmerProfile
-							img={ProfileHolder}
-							name="U Sai Han"
-						/>
-						<FarmerProfile
-							img={ProfileHolder}
-							name="U Kyaw Thu"
-						/>
-					</motion.div>
+					<h3 className="font-bold text-center my-4 text-xl lg:text-2xl">
+						We were trying to be resilient and sustainable.
+					</h3>
+					<p className="text-md">
+						&emsp;&emsp;&emsp;&emsp;Farmer Difficulties;
+						Input Access / Unstable Market Price / Trustful
+						Sale Channel To help solving the farmers&apos;
+						difficulties, TTTD need to transform as a
+						business entity which is sustainable, resilient,
+						efficient in order to be a long-term partner of
+						farmers to run the farming business together.
+						Therefore, it is to provide the solutions; form
+						them as cluster and provide management solution
+						and market access.
+						<br />
+						&emsp;&emsp;&emsp;&emsp;As business plan, TTTD
+						will engage with agriculture inputs companies,
+						traders and exporters to create revenue and to
+						expand the market access for farmers and
+						customer base for input sale.
+					</p>
+				</section>
 
-					<motion.div
-						className="mt-8"
-						variants={fade}
-						initial="initial"
-						whileInView="animate"
-					>
-						<p className="text-center mx-8 sm:mx-32 text-sm lg:text-xl">
-							Taungthutada has improved the farm conditions
-							of the farmers in the past 3 years and
-							increased the income of the farmers by 30%.
-							Taungthutada has improved the farm conditions
-							of the farmers in the past 3 years and
-							increased the income of the farmers by 30%.
-						</p>
-					</motion.div>
-
-					<motion.div
-						className="mt-8 border-dashed border-black border-2 rounded-lg pb-8"
-						variants={fade}
-						initial="initial"
-						whileInView="animate"
-					>
-						<h3 className="font-bold text-center my-4 text-xl lg:text-2xl sm:text-2xl">
-							We offer a wide range <br />
-							of services for
-						</h3>
-						<div className="mt-8 mx-16">
-							<Swiper
-								spaceBetween={50}
-								modules={[Pagination]}
-								pagination={{
-									dynamicBullets: true,
-									clickable: true,
-								}}
-								breakpoints={{
-									800: {
-										slidesPerView: 3,
-									},
-									0: {
-										slidesPerView: 1,
-									},
-								}}
-							>
-								<SwiperSlide>
-									<VegetableCard
-										img={Potato}
-										name={"Potato"}
-									/>
-								</SwiperSlide>
-								<SwiperSlide>
-									<VegetableCard
-										img={Chilli}
-										name={"Chilli"}
-									/>
-								</SwiperSlide>
-								<SwiperSlide>
-									<VegetableCard
-										img={SweetPotato}
-										name={"Sweetpotato"}
-									/>
-								</SwiperSlide>
-								<SwiperSlide>
-									<VegetableCard
-										img={SweetPotato}
-										name={"Sweetpotato"}
-									/>
-								</SwiperSlide>
-							</Swiper>
-						</div>
-
-						<div className="">
-							<h3 className="font-bold text-center my-4 text-xl lg:text-2xl">
-								Our Services
-							</h3>
-
-							<div className="flex flex-col sm:flex-row space-x-0 sm:space-x-3 mx-8 lg:mx-32 justify-between">
-								<div>
-									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
-										Farmer Partner
-									</h6>
-									<ul className="list-disc mt-4 space-y-5 text-md lg:text-xl">
-										<li>Farm Consultation</li>
-										<li>Farmers Cluster Support</li>
-										<li>Market Information Advisory</li>
-									</ul>
-								</div>
-								<div>
-									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
-										Field Partner
-									</h6>
-									<ul className="list-disc mt-4 text-md lg:text-xl space-y-5">
-										<li>Inputs Coordination & Sale</li>
-										<li>
-											Operation & Agronomist Outsourcing
-										</li>
-										<li>
-											Field Data Collection & Analysis
-										</li>
-										<li>Contract Farming</li>
-									</ul>
-								</div>
-								<div>
-									<h6 className="font-semibold text-center text-xl lg:text-2xl mt-4 sm:mt-0">
-										Capacity Development
-									</h6>
-									<ul className="list-disc mt-4 text-md lg:text-xl space-y-5">
-										<li>Women Empowerment Program</li>
-										<li>Agri Startup Support</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</motion.div>
-
+				<section className="mx-4 sm:mx-8 lg:mx-16 pb-8 sm:pb-32">
 					<div className="relative sm:absolute left-0 right-0 mx-auto">
 						<div className="flex justify-center mt-16">
 							<div className="w-[370px] sm:w-[600px] lg:w-[800px] bg-white rounded-xl drop-shadow-lg p-10">
 								<h3 className="font-bold text-center my-2 text-xl lg:text-2xl sm:text-2xl">
-									We&apos;ve Completed
+									Since inception in 2017, Dream Impact has
+									supported
 								</h3>
 								<div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 									<div className="">
-										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
+										<h3 className="font-bold text-center my-4 text-lg sm:text-4xl text-gray-700">
 											<CountUp
 												start={0}
-												end={6}
-												duration={2}
+												end={157}
+												duration={1.5}
 												enableScrollSpy
 											>
 												{({ countUpRef }) => (
 													<span ref={countUpRef} />
 												)}
 											</CountUp>{" "}
-											Projects
 										</h3>
-										<p className="text-center">
-											in Success
+										<p className="text-center text-sm">
+											Social Purpose Organizations
 										</p>
 									</div>
 									<div className="">
-										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
+										<h3 className="font-bold text-center my-4 text-lg sm:text-4xl text-gray-700">
 											<CountUp
 												start={0}
-												end={3}
+												end={3500}
 												duration={2}
 												enableScrollSpy
 											>
 												{({ countUpRef }) => (
 													<span ref={countUpRef} />
 												)}
-											</CountUp>{" "}
-											+ Years
+											</CountUp>
+											{"+"}
 										</h3>
 										<p className="text-center">
-											in Service
+											Impact Events
 										</p>
 									</div>
 									<div className="">
-										<h3 className="font-bold text-center my-4 text-lg sm:text-2xl">
+										<h3 className="font-bold text-center my-4 text-lg sm:text-4xl text-gray-700">
 											<CountUp
 												start={0}
-												end={2000}
+												end={50000}
 												duration={2}
 												enableScrollSpy
 											>
 												{({ countUpRef }) => (
 													<span ref={countUpRef} />
 												)}
-											</CountUp>{" "}
-											+ Happy
+											</CountUp>
+											{"+"}
 										</h3>
-										<p className="text-center">Farmers</p>
+										<p className="text-center">
+											Participants
+										</p>
 									</div>
 								</div>
 							</div>
@@ -506,6 +410,31 @@ const Home: NextPage = () => {
 								Bearing
 							</h3>
 						</motion.div>
+					</div>
+				</section>
+				<section className="mx-4 sm:mx-8 lg:mx-16 py-4 sm:py-8">
+					<div className="flex justify-center">
+						<div>
+							<h3 className="font-bold text-xl lg:text-2xl text-center">
+								Our 3 pillars of work{" "}
+								<span className="text-mainColor">
+									for collective impact
+								</span>
+							</h3>
+							<div className="grid grid-cols-3 mt-8 gap-4">
+								{impactData.map((data, idx) => {
+									return (
+										<div key={idx}>
+											<ImpactCard
+												logo={data.logo}
+												title={data.title}
+												descriptions={data.descriptions}
+											/>
+										</div>
+									);
+								})}
+							</div>
+						</div>
 					</div>
 				</section>
 

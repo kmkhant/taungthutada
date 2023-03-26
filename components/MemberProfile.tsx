@@ -8,7 +8,7 @@ import { MemberProfileProps } from "../@types.taungthutada";
 
 import { motion } from "framer-motion";
 
-import { slideIn } from "../variants";
+import { fadeUp } from "../variants";
 
 const MemberProfile: React.FC<MemberProfileProps> = ({
 	name,
@@ -18,7 +18,7 @@ const MemberProfile: React.FC<MemberProfileProps> = ({
 	email,
 }) => {
 	return (
-		<motion.div className="" variants={slideIn}>
+		<motion.div className="" variants={fadeUp}>
 			<Image
 				src={imageUrl}
 				alt={`${name}'s profile`}
