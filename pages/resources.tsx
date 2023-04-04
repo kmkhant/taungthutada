@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/legacy/image";
 import React from "react";
+import HeroSection from "../components/HeroSection/HeroSection";
 
 import { motion } from "framer-motion";
 import { fadeUp, container, slideIn } from "../variants";

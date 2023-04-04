@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import React from "react";
+import HeroSection from "../components/HeroSection/HeroSection";
 
 import { motion } from "framer-motion";
 import {
@@ -77,35 +78,7 @@ const Ourmilestones: NextPage = () => {
 	return (
 		<main>
 			<SEO title="Our Milestones" />
-			<section className="bg-midColor h-[350px] flex justify-center items-center">
-				<div className="flex space-x-2">
-					<motion.div
-						className="w-16 h-0.5 bg-white rounded-full mt-3"
-						variants={fadeUp}
-						initial="initial"
-						whileInView="animate"
-					></motion.div>
-					<motion.div
-						className="sm:w-[600px]"
-						variants={container}
-						initial="initial"
-						whileInView="animate"
-					>
-						<motion.p
-							className="text-white font-semibold text-xl lg:text-2xl"
-							variants={fadeUp}
-						>
-							Our Milestones
-						</motion.p>
-						<motion.p
-							className="text-white text-md lg:text-lg"
-							variants={fadeUp}
-						>
-							Make a short description
-						</motion.p>
-					</motion.div>
-				</div>
-			</section>
+			<HeroSection title='Our Milestones'>Make a short description.</HeroSection>
 			<section className="">
 				<div className="flex justify-center my-5">
 					<TimelineMotion
